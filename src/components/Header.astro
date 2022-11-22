@@ -1,0 +1,172 @@
+---
+const { pageId } = Astro.props
+---
+
+<header class={`header header--${pageId}`} id="header">
+  <a href="/" class="header__logo">
+    <img src="/assets/logo.svg" alt="lutin vert logo">
+  </a>
+
+  <ul class="header__ul">
+    <li class={`header__ul__li ${pageId == 0 ? 'header__ul__li--underline' : ''}`} onclick="bubble(0)">
+      <a href="/"><span>L'ASSO</span></a>
+    </li>
+    <li class={`header__ul__li ${pageId == 1 ? 'header__ul__li--underline' : ''}`} onclick="bubble(1)">
+      <a href="/donner"><span>DONNER</span></a>
+    </li>
+    <li class={`header__ul__li ${pageId == 2 ? 'header__ul__li--underline' : ''}`} onclick="bubble(2)">
+      <a href="/boutique"><span>BOUTIQUE</span></a>
+    </li>
+    <li class={`header__ul__li ${pageId == 3 ? 'header__ul__li--underline' : ''}`} onclick="bubble(3)">
+      <a href="/contact"><span>CONTACT</span></a>
+    </li>
+  </ul>
+</header>
+
+<script lang="ts">
+const header = document.getElementById('header')
+
+function bubble(page) {
+  const bubble = document.createElement('div')
+  switch (page) {
+    case 0 :
+      bubble.className = 'bubble bubble--0 bubble--primary-regular'
+      break;
+    case 1 :
+      bubble.className = 'bubble bubble--1 bubble--secondary-blue'
+      break;
+    case 2 :
+      bubble.className = 'bubble bubble--2 bubble--secondary-yellow'
+      break;
+    case 3 :
+      bubble.className = 'bubble bubble--3 bubble--secondary-green'
+      break;
+  }
+  header.insertAdjacentElement('beforeend', bubble)
+}
+</script>
+
+<style lang="scss">
+@import '../scss/var';
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: $color-primary-regular;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  &__logo {
+    position: absolute;
+    z-index: 1;
+    top: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+      height: 48px;
+      width: 49px;
+    }
+  }
+
+  &__ul {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: auto;
+    height: 46px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+
+    &__li {
+      width: 100%;
+      
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: $color-font-white;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      &--underline {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--0 { background-color: $color-primary-regular; }
+  &--1 { background-color: $color-secondary-blue; }
+  &--2 { background-color: $color-secondary-yellow; }
+  &--3 { background-color: $color-secondary-green; }
+}
+
+@media (min-width: 650px) {
+  .header {
+    height: 70px;
+    position: sticky;
+    top: 0;
+
+    &__ul {
+      max-width: none;
+      height: 100%;
+      padding: 0 10%;
+      
+      &__li {
+        font-size: 14px;
+
+        span {
+          margin-top: 10px;
+        }
+        &:nth-child(2) {
+          margin-right: 10%;
+        }
+        &:nth-child(3) {
+          margin-left: 10%;
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes growing {
+  from {
+    transform: translate(-50%, 50%) scale(3%);
+  }
+}
+:global(.bubble) {
+  position: absolute;
+  z-index: 0;
+  bottom: 50%;
+  width: 200vw;
+  height: 200vw;
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  animation: growing 300ms;
+
+  &:global(.bubble--0) {
+    left: 20%;
+  }
+  &:global(.bubble--1) {
+    left: 40%;
+  }
+  &:global(.bubble--2) {
+    left: 60%;
+  }
+  &:global(.bubble--3) {
+    left: 80%;
+  }
+  @each $name, $color in $colors {
+    &:global(.bubble--#{$name}) {
+      background-color: $color;
+    }
+  }
+}
+
+</style>
