@@ -49,6 +49,10 @@ function bubble(page) {
 <style lang="scss">
 @import '../scss/var';
 
+:root {
+  --header-height: 100px;
+}
+
 .header {
   width: 100%;
   height: 100px;
@@ -56,6 +60,7 @@ function bubble(page) {
   position: relative;
   display: flex;
   overflow: hidden;
+  z-index: 100;
 
   &__logo {
     position: absolute;
@@ -93,6 +98,8 @@ function bubble(page) {
         text-decoration: none;
         font-size: 12px;
         font-weight: bold;
+        letter-spacing: 1px;
+        font-family: $font-wide;
       }
       &--underline {
         text-decoration: underline;
@@ -111,6 +118,7 @@ function bubble(page) {
     height: 70px;
     position: sticky;
     top: 0;
+    box-shadow: 0 0 20px #0004;
 
     &__ul {
       max-width: none;
@@ -131,6 +139,10 @@ function bubble(page) {
         }
       }
     }
+  }
+  
+  :root {
+    --header-height: 70px;
   }
 }
 

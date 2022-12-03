@@ -3,5 +3,27 @@ import Layout from '../layouts/MainLayout.astro'
 ---
 
 <Layout title="Contact" id={3}>
-  <h1>Contact</h1>
+
+<section class="section temp">
+  <h2>Nous contacter</h2>
+  <p>
+    Lutin Vert est une association loi 1901 à but non lucratif née en 2021 dans le but de créer une <b>recyclerie de jouets</b> sur le nord toulousain. La mission de l'association est de permettre <b>l'inclusion de personnes éloignées de l'emploi</b> en leur proposant de reprendre pied dans le monde du travail au sein d'un atelier de réemploi des jouets.
+  </p>
+  <p>
+    Depuis fin 2021, l'association <b>collecte des jouets</b> qui lui sont donnés par les habitants de son territoire afin de leur donner une seconde vie. Ces jouets sont <b>rénovés par des salariés</b> en transition professionnelle à l'atelier de l'association. Chaque salarié est accompagné en parallèle du travail sur les jouets dans la construction de son projet de <b>retour à l'emploi</b>.
+  </p>
+</section>
+
 </Layout>
+
+<style lang="scss">
+@import '../scss/var';
+
+.temp {
+  color: $color-font;
+
+  h2 {
+    color: $color-secondary-green;
+  }
+}
+</style>

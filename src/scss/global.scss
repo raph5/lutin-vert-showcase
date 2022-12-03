@@ -1,9 +1,70 @@
 @import 'var';
-@import 'reset';
 
 body {
   padding: 0;
   margin: 0;
   font-family: $font;
+  background-color: $color-font-white;
+  color: $color-font;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  width: 100%;
+  padding: 80px 25px 60px 25px;
+  box-sizing: border-box;
+  
+  @media (min-width: 700px) {
+    padding: 80px 100px 60px 100px;
+  }
+}
+
+.title-flower {
+  vertical-align: bottom;
+  
+  @media (min-width: 700px) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+h2 {
+  font-family: $font-wide;
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  position: relative;
+  width: fit-content;
+  margin-bottom: 21px;
+  
+  @media (min-width: 700px) {
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+p, b {
+  font-family: $font;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 5px 0;
+  width: 100%;
+  
+  @media (min-width: 700px) {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}

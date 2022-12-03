@@ -26,7 +26,7 @@ $color-primary-light: #f4f4f4;
 $color-primary-medium: #66d178;
 $color-primary-regular: #124f1a;
 
-$color-secondary-blue: #5c8ffA;
+$color-secondary-blue: #678ddd;
 $color-secondary-green: #4f8f85;
 $color-secondary-brown: #40241c;
 $color-secondary-red: #eb3b3b;
@@ -51,3 +51,7 @@ $colors: (
   "secondary-orange": $color-secondary-orange,
   "secondary-yellow": $color-secondary-yellow
 );
+
+@mixin texture-back($color) {
+  background: url('/assets/texture.svg'), linear-gradient(0, $color, $color);
+}
