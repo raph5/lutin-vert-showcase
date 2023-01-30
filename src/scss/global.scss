@@ -36,7 +36,7 @@ h2 {
   font-family: $font-wide;
   margin-top: 0;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 23px;
   line-height: 30px;
   position: relative;
   width: fit-content;
@@ -49,10 +49,10 @@ h2 {
   }
 }
 
-p, b {
+p, b, li, i, span {
   font-family: $font;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 17px;
   margin: 5px 0;
   width: 100%;
   
@@ -63,11 +63,8 @@ p, b {
   }
 }
 
-li {
-  list-style: none;
-}
 ul {
-  padding: 0;
+  padding-left: 20px;
 }
 
 @media (max-width: 900px) {

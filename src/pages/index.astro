@@ -248,7 +248,8 @@ import Layout from '../layouts/MainLayout.astro'
 
 
 <script>
-let idle = true
+
+let idle = window.innerWidth > 900
 
 const elPos = {
   0: {x:-40, y:-200},
@@ -356,6 +357,7 @@ document.querySelector('body').onscroll = () => {
     font-size: 20px;
     text-align: center;
     margin-top: 15px;
+    line-height: 28px;
   }
   &__cta {
     margin-top: auto;
@@ -431,6 +433,7 @@ document.querySelector('body').onscroll = () => {
       z-index: 1;
       display: block;
       margin: 0 auto;
+      line-height: unset;
     }
     &__num {
       font-family: $font-wide;
@@ -656,6 +659,8 @@ document.querySelector('body').onscroll = () => {
       align-items: center;
 
       span {
+        text-align: center;
+        margin: 0;
         font-family: $font;
         font-size: 12px;
       }
