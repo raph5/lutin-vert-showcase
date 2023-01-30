@@ -13,7 +13,8 @@ import Layout from '../layouts/MainLayout.astro'
     </svg>
   </h2>
   <div class="site__mockup">
-    <img src="/assets/lutinvert-mockup.png" alt="lutinvert.org mockup">
+    <img class="media-phone" src="/assets/lutinvert-mockup.png" alt="lutinvert.org mockup">
+    <img class="media-pc" src="/assets/desktop-mockup.png" alt="lutinvert.org mockup">
   </div>
   <div class="site__info">
     <p>
@@ -72,6 +73,7 @@ h2 {
 
   h2 {
     grid-area: h2;
+    max-width: 800px;
   }
   button {
     position: relative;
@@ -95,21 +97,42 @@ h2 {
       text-decoration: none;
       color: $color-font-white;
     }
-    @media (min-width: 700px) {
-      &::after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 500px;
-        background-color: #ecd8a4;
-        transition: transform 80ms;
-      }
-      &:hover::after {
-        transform: translate(3px, 3px);
+  }
+  
+  @media (min-width: 700px) {
+    button::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 500px;
+      background-color: #ecd8a4;
+      transition: transform 80ms;
+    }
+    button:hover::after {
+      transform: translate(3px, 3px);
+    }
+    .site__mockup img {
+      transform: translateX(-50px);
+    }
+  }
+  @media (min-width: 901px) {
+    padding-top: 120px;
+    column-gap: 90px;
+    row-gap: 60px;
+    grid-template-columns: 300px auto;
+    grid-template-areas: "h2 h2"
+                         "info img";
+
+    .site__mockup {
+      width: 100%;
+      
+      img {
+        width: 100%;
+        transform: unset;
       }
     }
   }
@@ -117,6 +140,14 @@ h2 {
 
 .marches {
   padding-top: 40px;
+  
+  h2, p {
+    max-width: 800px;
+  }
+  @media (min-width: 901px) {
+    padding-top: 100px;
+    padding-bottom: 140px;
+  }
 }
 
 </style>
