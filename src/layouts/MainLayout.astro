@@ -23,6 +23,11 @@ const { title, id } = Astro.props;
 
 </html>
 
+<script>
+const root = document.querySelector(':root') as HTMLElement
+root.style.setProperty('--vh', `${window.innerHeight.toString()}px`)
+</script>
+
 <style lang="scss" is:global>
 @import '../scss/global';
 </style>
