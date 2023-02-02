@@ -1,0 +1,56 @@
+
+<div class="newsletter">
+  <input id="newsletter-input" type="email" placeholder="e-mail">
+  <button>
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M37 20L7 20" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+      <path d="M16.4744 8.75L4.15955 20L16.4744 31.25" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
+
+<style lang="scss">
+@import '../scss/var';
+
+.newsletter {
+  display: flex;
+  border: 1px solid $color-background;
+  max-width: 280px;
+  height: 30px;
+
+  input {
+    border: none;
+    background: none;
+    width: 100%;
+    outline: none;
+    color: $color-font-white;
+    padding: 0 8px;
+    font-size: 16px;
+
+    &::placeholder {
+      color: darken($color: $color-font-white, $amount: 20);
+    }
+  }
+  button {
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &:hover svg {
+      transform: rotate(180deg) translateX(-1px);
+    }
+    
+    svg {
+      width: 24px;
+      height: 24px;
+      transition: transform 100ms;
+      transform: rotate(180deg) translateX(1px);
+    }
+    path {
+      stroke: $color-background;
+    }
+  }
+}
+</style>

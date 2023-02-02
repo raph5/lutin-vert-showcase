@@ -1,0 +1,219 @@
+---
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+</head>
+
+<body>
+  <header>
+    <h1>{title}</h1>
+  </header>
+  <main>
+    <slot />
+  </main>
+</body>
+
+</html>
+
+<script>
+const root = document.querySelector(':root') as HTMLElement
+root.style.setProperty('--vh', `${window.innerHeight.toString()}px`)
+</script>
+
+<style lang="scss" is:global>
+@import '../scss/var';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+  background-color: $color-background;
+}
+
+header {
+  height: 100px;
+  background: $color-primary-regular;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 25px;
+  color: $color-font-white;
+  position: relative;
+  z-index: 100;
+  
+  @media (min-width: 700px) {
+    padding: 0 100px;
+  }
+  @media (min-width: 1000px) {
+    padding: 0 200px;
+  }
+  @media (min-width: 650px) {
+    height: 70px;
+    box-shadow: 0 0 20px #0004;
+    position: sticky;
+    top: 0;
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 28px;
+    // text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    @media (min-width: 700px) {
+      font-size: 32px;
+    }
+  }
+}
+
+h2 {
+  font-size: 22px;
+  line-height: unset;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  
+  @media (min-width: 700px) {
+    font-size: 26px;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+p, b, i, li, u {
+  font-size: 14px;
+  line-height: 17px;
+  margin: 5px 0;
+  
+  @media (min-width: 700px) {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+a {
+  color: $color-font;
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+li {
+  margin: 0;
+}
+ul {
+  margin: 5px 0;
+
+  @media (min-width: 700px) {
+    margin: 8px 0;
+  }
+}
+
+main {
+  width: 100%;
+  padding: 80px 25px 60px 25px;
+  box-sizing: border-box;
+  color: $color-font;
+
+  @media (min-width: 700px) {
+    padding: 80px 100px 60px 100px;
+    p, b, i, u {
+      text-align: justify;
+    }
+  }
+  @media (min-width: 1000px) {
+    padding: 80px 200px 60px 200px;
+  }
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 15px 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+</style>
