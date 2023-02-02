@@ -1,27 +1,3 @@
-@import url("https://hello.myfonts.net/count/3fd0b8");
-
-@font-face {
-  font-family: "Monotalic";
-  src: url('/fonts/MonotalicRegular.woff2') format('woff2');
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Monotalic";
-  src: url('/fonts/MonotalicBold.woff2') format('woff2');
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Monotalic-Wide";
-  src: url('/fonts/MonotalicWideLight.woff2') format('woff2');
-  font-weight: 100;
-}
-@font-face {
-  font-family: "Monotalic-Wide";
-  src: url('/fonts/MonotalicWideBold.woff2') format('woff2');
-  font-weight: 700;
-}
-
-
 $color-primary-light: #f4f4f4;
 $color-primary-medium: #66d178;
 $color-primary-regular: #124f1a;
@@ -37,8 +13,8 @@ $color-background: #f3f4f3;
 $color-font: #1e1e1e;
 $color-font-white: #f3f4f3;
 
-$font-wide: "Monotalic-Wide";
 $font: "Monotalic";
+$font-wide: "Monotalic-Wide";
 
 $colors: (
   "primary-light": $color-primary-light,

@@ -1,5 +1,28 @@
 @import 'var';
 
+@import url("https://hello.myfonts.net/count/3fd0b8");
+
+@font-face {
+  font-family: "Monotalic";
+  src: url('/fonts/MonotalicRegular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Monotalic";
+  src: url('/fonts/MonotalicBold.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Monotalic-Wide";
+  src: url('/fonts/MonotalicWideLight.woff2') format('woff2');
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Monotalic-Wide";
+  src: url('/fonts/MonotalicWideBold.woff2') format('woff2');
+  font-weight: 700;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -21,6 +44,9 @@ html {
   @media (min-width: 700px) {
     padding: 80px 100px 60px 100px;
   }
+  @media (min-width: 901px) {
+    padding: 100px 10%;
+  }
 }
 
 .title-flower {
@@ -33,7 +59,6 @@ html {
 }
 
 h2 {
-  font-family: $font-wide;
   margin-top: 0;
   font-weight: bold;
   font-size: 23px;
@@ -49,7 +74,7 @@ h2 {
   }
 }
 
-p, b, li, i, span, a {
+p, b, li, i, span, a, u {
   font-family: $font;
   font-size: 14px;
   line-height: 17px;
@@ -62,7 +87,11 @@ p, b, li, i, span, a {
   }
 }
 
+li {
+  margin: 3px 0;
+}
 ul {
+  margin: 2px 0;
   padding-left: 20px;
   
   @media (min-width: 700px) {
