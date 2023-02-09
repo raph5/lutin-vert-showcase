@@ -1,8 +1,11 @@
 ---
+import FundingRequest from '../components/FundingRequest.astro';
 import Layout from '../layouts/MainLayout.astro'
 ---
 
 <Layout title="Contact" id={3}>
+
+<FundingRequest color="secondary-green" />
 
 <section class="section contact">
   <div class="contact__infos">
@@ -11,7 +14,11 @@ import Layout from '../layouts/MainLayout.astro'
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="#4f8f85" d="M8.99981 9.03781C9.42461 9.03781 9.78701 8.8878 10.087 8.5878C10.387 8.28781 10.537 7.92511 10.537 7.49971C10.537 7.07491 10.387 6.71251 10.087 6.41251C9.78701 6.11251 9.42461 5.96251 8.99981 5.96251C8.57501 5.96251 8.21261 6.11251 7.91261 6.41251C7.61261 6.71251 7.46261 7.07491 7.46261 7.49971C7.46261 7.92511 7.61261 8.28781 7.91261 8.5878C8.21261 8.8878 8.57501 9.03781 8.99981 9.03781ZM8.99981 16.4997C6.98741 14.7627 5.48441 13.1691 4.49081 11.7189C3.49661 10.2687 2.99951 8.91241 2.99951 7.65001C2.99951 5.7624 3.59951 4.2654 4.79951 3.15901C5.99951 2.05321 7.39961 1.50031 8.99981 1.50031C10.6 1.50031 12.0001 2.05321 13.2001 3.15901C14.4001 4.2654 15.0001 5.7624 15.0001 7.65001C15.0001 8.91241 14.503 10.2687 13.5088 11.7189C12.5152 13.1691 11.0122 14.7627 8.99981 16.4997Z"/>
       </svg>
-      <span>Abbaye Sainte Marie du Désert 31530 Bellegarde-Sainte-Marie</span>
+      <span>
+        Abbaye Sainte Marie du Désert<br>
+        35 Chemin de Saint Bernard<br>
+        31530 Bellegarde-Sainte-Marie
+      </span>
     </div>
     <div class="contact__infos__chip">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,6 +54,11 @@ import Layout from '../layouts/MainLayout.astro'
             <path d="m12 5.9375c-3.3477 0-6.0625 2.7148-6.0625 6.0625s2.7148 6.0625 6.0625 6.0625 6.0625-2.7148 6.0625-6.0625-2.7148-6.0625-6.0625-6.0625zm0 10c-2.1758 0-3.9375-1.7617-3.9375-3.9375s1.7617-3.9375 3.9375-3.9375 3.9375 1.7617 3.9375 3.9375-1.7617 3.9375-3.9375 3.9375z"/>
             <path d="m19.719 5.6953c0 0.78516-0.63281 1.418-1.4141 1.418-0.78516 0-1.418-0.63281-1.418-1.418 0-0.78125 0.63281-1.4141 1.418-1.4141 0.78125 0 1.4141 0.63281 1.4141 1.4141z"/>
           </g>
+        </svg>
+      </a>
+      <a href="https://fr.linkedin.com/company/lutin-vert" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
         </svg>
       </a>
     </div>

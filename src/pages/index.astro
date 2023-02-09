@@ -1,4 +1,5 @@
 ---
+import FundingRequest from '../components/FundingRequest.astro';
 import SubscribeMailingList from '../components/SubscribeMailingList.astro';
 import Layout from '../layouts/MainLayout.astro'
 ---
@@ -6,9 +7,11 @@ import Layout from '../layouts/MainLayout.astro'
 
 <Layout title="L'Association" id={0}>
 
+<FundingRequest color="primary-regular" />
+
 <section class="banner">
   <h1 class="banner__title">LUTIN VERT</h1>
-  <span class="banner__subtitle">Jouets Vert, Jouets Solidaires</span>
+  <span class="banner__subtitle">Jouets Verts, Jouets Solidaires</span>
   <a class="banner__cta" href="#qui-sommes-nous">nous découvrir</a>
 </section>
 
@@ -25,7 +28,7 @@ import Layout from '../layouts/MainLayout.astro'
       </svg>
     </h2>
     <h2 class="media-pc">
-      Nous réparons les jouets que vous n'utilisez plus
+      Nous rénovons les jouets que vous n'utilisez plus
       <svg class="title-flower" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <path d="M39.7964 16.0184C38.6563 18.7871 38.6564 21.8815 39.7964 24.6502C43.6237 34.1777 34.1777 43.6237 24.6502 39.7964C21.8815 38.6564 18.7871 38.6563 16.0184 39.7964C6.49097 43.6236 -2.95504 34.1776 0.872233 24.6502C2.01227 21.8815 2.01223 18.7871 0.872191 16.0184C-2.95508 6.49096 6.49096 -2.95508 16.0184 0.872191C18.7871 2.01223 21.8815 2.01227 24.6502 0.872234C34.1776 -2.95504 43.6236 6.49097 39.7964 16.0184Z" fill="#40251D"/>
         <rect x="7" y="6" width="26" height="27" fill="url(#pattern13252)"/>
@@ -38,11 +41,14 @@ import Layout from '../layouts/MainLayout.astro'
       </svg>
     </h2>
     <p>
-      Lutin Vert est une association loi 1901 à but non lucratif née en 2021 dans le but de créer une <b>recyclerie de jouets</b> sur le nord toulousain. La mission de l'association est de permettre <b>l'inclusion de personnes éloignées de l'emploi</b> en leur proposant de reprendre pied dans le monde du travail au sein d'un atelier de réemploi des jouets.
+      L'association Lutin Vert est une <b>recyclerie de jouets</b> installée au nord-ouest de Toulouse. Sa mission est de <b>favoriser l'inclusion par l'emploi</b> de personnes en situation de précarité.
     </p>
     <p>
-      Depuis fin 2021, l'association <b>collecte des jouets</b> qui lui sont donnés par les habitants de son territoire afin de leur donner une seconde vie. Ces jouets sont <b>rénovés par des salariés</b> en transition professionnelle à l'atelier de l'association. Chaque salarié est accompagné en parallèle du travail sur les jouets dans la construction de son projet de <b>retour à l'emploi</b>.
+      L'association <b>collecte</b> les jouets inutilisés afin de leur donner une seconde vie. Ces jouets sont <b>rénovés</b> avec soin par les femmes et hommes en transition professionnelle qui travaillent à l'atelier. Les jouets sont ensuite <b>vendus à prix solidaires</b>. Chaque jouet réemployé permet de <b>préserver la planète</b>.
     </p>
+    <button>
+      <a href="/contact">Devenir Bénévole</a>
+    </button>
   </div>
 </section>
 
@@ -50,25 +56,19 @@ import Layout from '../layouts/MainLayout.astro'
   <div class="atelier__paragraph">
     <h2>Atelier du réemploi</h2>
     <p>
-      En France, chaque année, plus de <b>100 000 tonnes de jouets</b> sont jetées pour seulement 13 000 à 25 000 tonnes de jouets réemployés*.
+      En France, chaque année, plus de <b>100 000 tonnes de jouets sont jetées</b> pour seulement 13 000 à 25 000 tonnes de jouets réemployés. C'est pour répondre à cette problématique que Lutin Vert donne une seconde vie aux jouets inutilisés.
     </p>
     <p>
-      C'est pour répondre à cette problématique que Lutin Vert donne une seconde vie aux jouets inutilisés.
+      Chaque jouet est <b>vérifié, complété, rénové et nettoyé</b> par les salarié.e.s de l'atelier. Des réparations sont effectuées sur certains jouets (électronique, peinture de jouets en bois par exemple).
     </p>
     <p>
-      Sur l'atelier, <b>chaque jouet est vérifié, complété, rénové et nettoyé</b> par un technicien du réemploi.
-    </p>
-    <p>
-      L'atelier compte déjà deux postes de réparation pour les jouets électroniques et les jouets en bois.
-    </p>
-    <p>
-      <b>Dans une exigence de qualité</b>, chaque jouet est contrôlé en sortie d'atelier avant sa mise en vente à prix solidaire.
+      Dans une exigence de <b>qualité</b>, chaque jouet est contrôlé en sortie d'atelier avant sa mise en vente à prix solidaire.
     </p>
   </div>
   <div class="atelier__chifres">
     <div class="flower-1">
-      <span class="flower-1__num">3 000</span>
-      <span class="flower-1__title">jouets recyclés</span>
+      <span class="flower-1__num">4,4</span>
+      <span class="flower-1__title">tonnes de jouets collectées</span>
       <svg width="207" height="204" viewBox="0 0 207 204" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M130.602 18.5161C133.904 32.0191 148.233 39.9636 161.826 34.9467C184.182 26.8597 202.901 53.0949 188.714 71.8778C180.03 83.1401 183.22 99.2242 194.984 106.627C215.157 119.133 206.481 150.222 182.736 150.491C168.486 150.739 158.023 163.217 159.583 177.076C162.458 200.474 132.988 213.426 117.812 195.101C108.781 184.368 92.414 183.662 82.4931 193.578C65.7963 210.529 37.5502 195.089 42.428 172.026C45.175 158.353 35.8245 145.02 21.6479 143.547C-1.96742 140.805 -7.52325 109.534 13.2212 98.7917C25.578 92.4285 30.1403 76.6786 22.4573 64.7108C9.93962 44.7767 30.8281 20.6799 52.4238 30.2306C65.1228 35.9499 80.064 29.6981 84.9461 16.548C92.8204 -5.95497 125.124 -4.56242 130.602 18.5161Z" fill="#55C15A"/>
       </svg>  
@@ -80,7 +80,7 @@ import Layout from '../layouts/MainLayout.astro'
     </div>
     <div class="flower-3">
       <span class="flower-1__num">3 000</span>
-      <span class="flower-1__title">jouets recyclés</span>
+      <span class="flower-1__title">jouets rénovés</span>
       <svg width="221" height="221" viewBox="0 0 221 221" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M141.401 21.2344L153.46 49.2955C157.033 57.3129 163.286 63.5487 171.325 67.1121L199.462 79.1382C227.153 90.719 227.153 129.915 199.462 141.496L171.325 153.522C163.286 157.086 157.033 163.321 153.46 171.339L141.401 199.4C129.789 227.016 90.4867 227.016 78.8745 199.4L66.8157 171.339C63.2427 163.321 56.99 157.086 48.9508 153.522L20.8138 141.496C-6.87673 129.915 -6.87673 90.719 20.8138 79.1382L48.9508 67.1121C56.99 63.5487 63.2427 57.3129 66.8157 49.2955L78.8745 21.2344C90.4867 -5.93588 129.789 -5.93588 141.401 21.2344Z" fill="#F4F3F4"/>
       </svg>
@@ -156,13 +156,13 @@ import Layout from '../layouts/MainLayout.astro'
   <div class="chantier__content">
     <h2>Chantier d'insertion</h2>
     <p>
-      Les postes de <b>technicien(nes) du réemploi</b> s'adressent à des personnes rencontrant des difficultés particulières d'accès à l'emploi.
+      Les postes de <b>technicien.ne.s du réemploi des jouets</b> s'adressent à des personnes rencontrant des difficultés sociales et professionnelles d'accès à l'emploi.
     </p>
     <p>
-      L'activité de rénovation des jouets est un moyen de développer, de <b>retrouver des savoirs-faire et savoir-être</b> transférables dans le monde du travail classique.
+      L'activité de rénovation des jouets est un moyen de développer et retrouver des <b>savoirs-faire et savoir-être transférables</b> dans le monde du travail classique.
     </p>
     <p>
-      Chaque salarié est accompagné par l'encadrant technique et la conseillère en insertion professionnelle pour construire de son <b>projet de retour vers l'emploi</b>.
+      Chaque salarié.e est accompagné.e par Hortense, <b>encadrante technique et pédagogique</b>, et Yoan, <b>conseiller en insertion professionnelle</b>, pour construire de son projet de retour vers l'emploi.
     </p>
     <button>
       <a href="/contact">Postuler</a>
@@ -176,45 +176,38 @@ import Layout from '../layouts/MainLayout.astro'
   <div class="ekip__crew">
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn-guyader.png" alt="gwenn guyader">  
+        <img src="/assets/isabelle.jpg" alt="Isabelle">  
       </div>
-      <span class="ekip__crew__pp__name">Gwenn Guyader</span>
+      <span class="ekip__crew__pp__name">Isabelle</span>
       <span class="ekip__crew__pp__role">Présidente</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn-guyader.png" alt="gwenn guyader">  
+        <img src="/assets/gwenn.jpg" alt="gwenn guyader">  
       </div>
-      <span class="ekip__crew__pp__name">Gwenn Guyader</span>
-      <span class="ekip__crew__pp__role">Présidente</span>
+      <span class="ekip__crew__pp__name">Gwenn</span>
+      <span class="ekip__crew__pp__role">Trésorière</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn-guyader.png" alt="gwenn guyader">  
+        <img src="/assets/julie.jpg" alt="Julie">  
       </div>
-      <span class="ekip__crew__pp__name">Gwenn Guyader</span>
-      <span class="ekip__crew__pp__role">Présidente</span>
+      <span class="ekip__crew__pp__name">Julie</span>
+      <span class="ekip__crew__pp__role">Secrétaire</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn-guyader.png" alt="gwenn guyader">  
+        <img src="/assets/hortense.jpg" alt="Hortense">  
       </div>
-      <span class="ekip__crew__pp__name">Gwenn Guyader</span>
-      <span class="ekip__crew__pp__role">Présidente</span>
+      <span class="ekip__crew__pp__name">Hortense</span>
+      <span class="ekip__crew__pp__role">Encadrante technique</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn-guyader.png" alt="gwenn guyader">  
+        <!-- <img src="/assets/hortense.jpg" alt="Yoan">   -->
       </div>
-      <span class="ekip__crew__pp__name">Gwenn Guyader</span>
-      <span class="ekip__crew__pp__role">Présidente</span>
-    </div>
-    <div class="ekip__crew__pp">
-      <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn-guyader.png" alt="gwenn guyader">  
-      </div>
-      <span class="ekip__crew__pp__name">Gwenn Guyader</span>
-      <span class="ekip__crew__pp__role">Présidente</span>
+      <span class="ekip__crew__pp__name">Yoan</span>
+      <span class="ekip__crew__pp__role">Conseiller en insertion pro</span>
     </div>
   </div>
 </section>
@@ -228,19 +221,13 @@ import Layout from '../layouts/MainLayout.astro'
     </svg>
   </h2>
   <div class="partenaires__logos">
-    <img class="edf media-phone" src="/assets/edf.png" alt="logo edf">
-    <img class="pole-emploi media-phone" src="/assets/pole_emploi.png" alt="logo pôle emploi">
-    <img class="decoset media-phone" src="/assets/decoset.png" alt="logo decoset">
-    <img class="ademe media-phone" src="/assets/ademe.png" alt="logo ademe">
-    <img class="occitanie media-phone" src="/assets/occitanie.png" alt="logo la région occitanie">
-    <img class="prefet-la-region media-phone" src="/assets/prefet_la_region.png" alt="logo préfet la région occitanie">
-
-    <img class="edf media-pc" src="/assets/edf.png" alt="logo edf">
-    <img class="pole-emploi media-pc" src="/assets/pole_emploi.png" alt="logo pôle emploi">
-    <img class="decoset media-pc" src="/assets/decoset.png" alt="logo decoset">
-    <img class="ademe media-pc" src="/assets/ademe.png" alt="logo ademe">
-    <img class="occitanie media-pc" src="/assets/occitanie.png" alt="logo la région occitanie">
-    <img class="prefet-la-region media-pc" src="/assets/prefet_la_region.png" alt="logo préfet la région occitanie">
+    <img class="edf" src="/assets/edf.png" alt="logo edf">
+    <img class="pole-emploi" src="/assets/pole_emploi.png" alt="logo pôle emploi">
+    <img class="decoset" src="/assets/decoset.png" alt="logo decoset">
+    <img class="ademe" src="/assets/ademe.png" alt="logo ademe">
+    <img class="occitanie" src="/assets/occitanie.png" alt="logo la région occitanie">
+    <img class="prefet-la-region" src="/assets/prefet_la_region.png" alt="logo préfet la région occitanie">
+    <img class="ag2r" src="/assets/ag2r.png" alt="logo ag2r">
   </div>
 </section>
 
@@ -248,13 +235,11 @@ import Layout from '../layouts/MainLayout.astro'
   <div class="footer__association">
     <h3>L'association</h3>
     <a href="/pdf/Charte_LutinVert.pdf" target="_blank" rel="noopener noreferrer">Charte du Lutin Vert</a>
-    <a href="/pdf/Statuts_LutinVert.pdf" target="_blank" rel="noopener noreferrer">Status</a>
+    <a href="/pdf/Statuts_LutinVert.pdf" target="_blank" rel="noopener noreferrer">Statuts</a>
   </div>
   
   <div class="footer__infos">
     <h3>Informations</h3>
-    <a href="/politiques/politique_d_expedition" target="_blank" rel="noopener noreferrer">Politique d'expédition</a>
-    <a href="/politiques/politique_de_retour" target="_blank" rel="noopener noreferrer">Politique de retour</a>
     <a href="/politiques/conditions_d_utilisation" target="_blank" rel="noopener noreferrer">Conditions d'utilisation</a>
     <a href="/politiques/politique_de_confidentialité" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
     <a href="/politiques/mentions_legales" target="_blank" rel="noopener noreferrer">Mentions légales</a>
@@ -278,6 +263,11 @@ import Layout from '../layouts/MainLayout.astro'
           <path d="m12 5.9375c-3.3477 0-6.0625 2.7148-6.0625 6.0625s2.7148 6.0625 6.0625 6.0625 6.0625-2.7148 6.0625-6.0625-2.7148-6.0625-6.0625-6.0625zm0 10c-2.1758 0-3.9375-1.7617-3.9375-3.9375s1.7617-3.9375 3.9375-3.9375 3.9375 1.7617 3.9375 3.9375-1.7617 3.9375-3.9375 3.9375z"/>
           <path d="m19.719 5.6953c0 0.78516-0.63281 1.418-1.4141 1.418-0.78516 0-1.418-0.63281-1.418-1.418 0-0.78125 0.63281-1.4141 1.418-1.4141 0.78125 0 1.4141 0.63281 1.4141 1.4141z"/>
         </g>
+      </svg>
+    </a>
+    <a href="https://fr.linkedin.com/company/lutin-vert" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
       </svg>
     </a>
   </div>
@@ -452,6 +442,51 @@ document.querySelector('body').onscroll = () => {
       width: 100%;
     }
   }
+
+  button {
+    position: relative;
+    margin-top: 20px;
+    border: none;
+    background: none;
+    padding: 0;
+    
+    a {
+      display: block;
+      border-radius: 500px;
+      padding: 9px 26px;
+      font-size: 12px;
+      line-height: 18px;
+      font-family: $font-wide;
+      font-weight: bold;
+      background-color: #D2C1BC;
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      text-decoration: none;
+      color: $color-secondary-brown;
+    }
+
+    @media (min-width: 700px) {
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 500px;
+        background-color: $color-secondary-brown;
+        transition: transform 80ms;
+        transition-delay: 30ms;
+        opacity: 0;
+      }
+      &:hover::after {
+        opacity: 1;
+        transform: translate(3px, 3px);
+      }
+    }
+  }
 }
 
 .atelier {
@@ -485,7 +520,7 @@ document.querySelector('body').onscroll = () => {
     }
     &__title {
       font-size: 14px;
-      max-width: 80px;
+      max-width: 150px;
       text-align: center;
     }
     svg {
@@ -516,6 +551,7 @@ document.querySelector('body').onscroll = () => {
       display: block;
       margin: 0 auto;
       color: #000;
+      line-height: unset;
     }
     &__num {
       font-family: $font-wide;
@@ -620,6 +656,27 @@ document.querySelector('body').onscroll = () => {
       text-decoration: none;
       color: $color-secondary-brown;
     }
+
+    @media (min-width: 700px) {
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 500px;
+        background-color: $color-secondary-brown;
+        transition: transform 80ms;
+        transition-delay: 30ms;
+        opacity: 0;
+      }
+      &:hover::after {
+        opacity: 1;
+        transform: translate(3px, 3px);
+      }
+    }
   }
 
   &__boxes svg {
@@ -627,27 +684,6 @@ document.querySelector('body').onscroll = () => {
     height: auto;
     position: absolute;
     bottom: -1px;
-  }
-
-  @media (min-width: 700px) {
-    button::after {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 500px;
-      background-color: $color-secondary-brown;
-      transition: transform 80ms;
-      transition-delay: 30ms;
-      opacity: 0;
-    }
-    button:hover::after {
-      opacity: 1;
-      transform: translate(3px, 3px);
-    }
   }
 
 
@@ -705,6 +741,9 @@ document.querySelector('body').onscroll = () => {
       }
       &__name {
         font-weight: bold;
+      }
+      &__role {
+        max-width: 100px
       }
       &__img {
         position: relative;
@@ -769,6 +808,11 @@ document.querySelector('body').onscroll = () => {
     img {
       position: absolute;
     }
+    .ag2r {
+      top: 22%;
+      left: 13%;
+      width: 60%;
+    }
     .prefet-la-region {
       top: 0;
       left: 0;
@@ -785,9 +829,9 @@ document.querySelector('body').onscroll = () => {
       width: 25%;
     }
     .decoset {
-      left: 34%;
-      top: 35%;
-      width: 25%;
+      left: 42%;
+      top: 45%;
+      width: 20%;
     }
     .edf {
       left: 30%;
@@ -803,69 +847,80 @@ document.querySelector('body').onscroll = () => {
     @media (min-width: 600px) {
       aspect-ratio: 10/3.5;
 
+      .ag2r {
+        top: 30%;
+        width: 40%;
+      }
       .prefet-la-region {
         width: 50%;
       }
       .occitanie {
         right: 3%;
         top: 0;
-        width: 16%;
+        width: 14%;
       }
       .ademe {
         top: unset;
         left: 8%;
         bottom: 0;
-        width: 15%;
+        width: 11%;
       }
       .decoset {
         top: unset;
         left: 30%;
         bottom: 0;
-        width: 17%;
+        width: 12%;
       }
       .edf {
         left: unset;
         right: 0;
         bottom: -8%;
-        width: 50%;
+        width: 45%;
       }
       .pole-emploi {
         right: 25%;
         bottom: unset;
         top: 0;
-        width: 19%;
+        width: 17%;
       }
     }
     @media (min-width: 1000px) {
       aspect-ratio: 10/2;
 
+      .ag2r {
+        top: unset;
+        left: unset;
+        bottom: -10%;
+        right: 0;
+        width: 30%;
+      }
       .prefet-la-region {
         width: 40%;
       }
       .edf {
         right: unset;
-        left: 13%;
-        width: 33%;
+        left: 10%;
+        width: 30%;
       }
       .ademe {
         width: 10%;
-        left: 45%;
-        bottom: 30%;
+        left: 55%;
+        bottom: 1%;
       }
       .decoset {
-        top: 0;
-        left: 60%;
+        top: 5%;
+        left: 43%;
         bottom: unset;
         width: 10%;
       }
       .pole-emploi {
         top: unset;
-        bottom: 0;
-        width: 14%;
-        right: 17%;
+        bottom: 48%;
+        width: 11%;
+        right: 20%;
       }
       .occitanie {
-        width: 12%;
+        width: 10%;
       }
     }
   }
