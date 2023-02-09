@@ -5,7 +5,11 @@ import Layout from '../layouts/MainLayout.astro'
 ---
 
 
-<Layout title="L'Association" id={0}>
+<Layout
+  title="Lutin Vert - jouets verts jouets solidaires"
+  description="Des jouets de seconde main de qualité à prix solidaires Association à but non lucratif - Recyclerie de jouets /Atelier d'Insertion Favoriser l'insertion et l'économie circulaire : un geste écoresponsable !"
+  id={0}>
+  <!-- TODO: refaire la description -->
 
 <FundingRequest color="primary-regular" />
 
@@ -17,7 +21,7 @@ import Layout from '../layouts/MainLayout.astro'
 
 <section class="section qui-sommes-nous" id="qui-sommes-nous">
   <div class="qui-sommes-nous__img media-pc">
-    <img src="/assets/travail.png" alt="travail">
+    <img src="/assets/travail.webp" alt="travail">
   </div>
   <div class="qui-sommes-nous__paragraph">
     <h2 class="media-phone">
@@ -176,35 +180,35 @@ import Layout from '../layouts/MainLayout.astro'
   <div class="ekip__crew">
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/isabelle.jpg" alt="Isabelle">  
+        <img src="/assets/isabelle.webp" alt="Isabelle">  
       </div>
       <span class="ekip__crew__pp__name">Isabelle</span>
       <span class="ekip__crew__pp__role">Présidente</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn.jpg" alt="gwenn guyader">  
+        <img src="/assets/gwenn.webp" alt="gwenn guyader">  
       </div>
       <span class="ekip__crew__pp__name">Gwenn</span>
       <span class="ekip__crew__pp__role">Trésorière</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/julie.jpg" alt="Julie">  
+        <img src="/assets/julie.webp" alt="Julie">  
       </div>
       <span class="ekip__crew__pp__name">Julie</span>
       <span class="ekip__crew__pp__role">Secrétaire</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <img src="/assets/hortense.jpg" alt="Hortense">  
+        <img src="/assets/hortense.webp" alt="Hortense">  
       </div>
       <span class="ekip__crew__pp__name">Hortense</span>
       <span class="ekip__crew__pp__role">Encadrante technique</span>
     </div>
     <div class="ekip__crew__pp">
       <div class="ekip__crew__pp__img">
-        <!-- <img src="/assets/hortense.jpg" alt="Yoan">   -->
+        <!-- <img src="/assets/hortense.webp" alt="Yoan">   -->
       </div>
       <span class="ekip__crew__pp__name">Yoan</span>
       <span class="ekip__crew__pp__role">Conseiller en insertion pro</span>
@@ -221,13 +225,13 @@ import Layout from '../layouts/MainLayout.astro'
     </svg>
   </h2>
   <div class="partenaires__logos">
-    <img class="edf" src="/assets/edf.png" alt="logo edf">
-    <img class="pole-emploi" src="/assets/pole_emploi.png" alt="logo pôle emploi">
-    <img class="decoset" src="/assets/decoset.png" alt="logo decoset">
-    <img class="ademe" src="/assets/ademe.png" alt="logo ademe">
-    <img class="occitanie" src="/assets/occitanie.png" alt="logo la région occitanie">
-    <img class="prefet-la-region" src="/assets/prefet_la_region.png" alt="logo préfet la région occitanie">
-    <img class="ag2r" src="/assets/ag2r.png" alt="logo ag2r">
+    <img class="edf" src="/assets/edf.webp" alt="logo edf">
+    <img class="pole-emploi" src="/assets/pole_emploi.webp" alt="logo pôle emploi">
+    <img class="decoset" src="/assets/decoset.webp" alt="logo decoset">
+    <img class="ademe" src="/assets/ademe.webp" alt="logo ademe">
+    <img class="occitanie" src="/assets/occitanie.webp" alt="logo la région occitanie">
+    <img class="prefet-la-region" src="/assets/prefet_la_region.webp" alt="logo préfet la région occitanie">
+    <img class="ag2r" src="/assets/ag2r.webp" alt="logo ag2r">
   </div>
 </section>
 
@@ -251,13 +255,13 @@ import Layout from '../layouts/MainLayout.astro'
   </div>
   
   <div class="footer__social-media">
-    <a href="https://www.facebook.com/lutinvertgg/" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.facebook.com/lutinvertgg/" target="_blank" rel="noopener noreferrer" aria-label="facebook">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
       </svg>
     </a>
     <a href="https://www.instagram.com/lutinvertgg/" target="_blank" rel="noopener noreferrer">
-      <svg version="1.1" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg version="1.1" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="instagram">
         <g>
           <path d="m12 2.3203c3.1523 0 3.5273 0.011719 4.7734 0.066407 1.1484 0.054687 1.7734 0.24609 2.1914 0.40625 0.51172 0.19141 0.97656 0.49219 1.3594 0.88672 0.39062 0.37891 0.69141 0.84375 0.88281 1.3555 0.16016 0.41797 0.35156 1.043 0.40625 2.1914 0.054688 1.2461 0.066407 1.6211 0.066407 4.7734s-0.011719 3.5273-0.066407 4.7734c-0.054687 1.1484-0.24609 1.7734-0.40625 2.1914-0.39844 1.0312-1.2109 1.8438-2.2422 2.2422-0.41797 0.16016-1.043 0.35156-2.1914 0.40625-1.2461 0.054688-1.6211 0.066407-4.7734 0.066407s-3.5273-0.011719-4.7734-0.066407c-1.1484-0.054687-1.7734-0.24609-2.1914-0.40625-0.51172-0.19141-0.97656-0.49219-1.3594-0.88281-0.39062-0.38281-0.69141-0.84766-0.88281-1.3594-0.16016-0.41797-0.35156-1.043-0.40625-2.1914-0.054688-1.2461-0.066407-1.6211-0.066407-4.7734s0.011719-3.5273 0.066407-4.7734c0.054687-1.1484 0.24609-1.7734 0.40625-2.1914 0.19141-0.51172 0.49219-0.97656 0.88281-1.3594 0.38281-0.39062 0.84766-0.69141 1.3594-0.88281 0.41797-0.16016 1.043-0.35156 2.1914-0.40625 1.2461-0.054688 1.6211-0.066407 4.7734-0.066407m0-2.1289c-3.207 0-3.6094 0.011719-4.8672 0.070313-1.2578 0.058593-2.1172 0.25781-2.8672 0.55078-0.78906 0.29688-1.5039 0.76172-2.0938 1.3594-0.59766 0.58984-1.0625 1.3047-1.3594 2.0938-0.29297 0.75-0.49219 1.6094-0.55078 2.8672-0.058594 1.2578-0.070313 1.6602-0.070313 4.8672s0.011719 3.6094 0.070313 4.8672c0.058593 1.2578 0.25781 2.1172 0.55078 2.8672 0.29688 0.78906 0.76172 1.5039 1.3594 2.0938 0.58984 0.59766 1.3047 1.0625 2.0938 1.3594 0.75 0.29297 1.6094 0.49219 2.8672 0.55078 1.2578 0.058594 1.6602 0.070313 4.8672 0.070313s3.6094-0.011719 4.8672-0.070313c1.2578-0.058593 2.1172-0.25781 2.8672-0.55078 1.5859-0.61328 2.8398-1.8672 3.4531-3.4531 0.29297-0.75 0.49219-1.6094 0.55078-2.8672 0.058594-1.2578 0.070313-1.6602 0.070313-4.8672s-0.011719-3.6094-0.070313-4.8672c-0.058593-1.2578-0.25781-2.1172-0.55078-2.8672-0.29688-0.78906-0.76172-1.5039-1.3594-2.0938-0.58984-0.59766-1.3047-1.0625-2.0938-1.3594-0.75-0.29297-1.6094-0.49219-2.8672-0.55078-1.2578-0.058594-1.6602-0.070313-4.8672-0.070313z"/>
           <path d="m12 5.9375c-3.3477 0-6.0625 2.7148-6.0625 6.0625s2.7148 6.0625 6.0625 6.0625 6.0625-2.7148 6.0625-6.0625-2.7148-6.0625-6.0625-6.0625zm0 10c-2.1758 0-3.9375-1.7617-3.9375-3.9375s1.7617-3.9375 3.9375-3.9375 3.9375 1.7617 3.9375 3.9375-1.7617 3.9375-3.9375 3.9375z"/>
@@ -265,7 +269,7 @@ import Layout from '../layouts/MainLayout.astro'
         </g>
       </svg>
     </a>
-    <a href="https://fr.linkedin.com/company/lutin-vert" target="_blank" rel="noopener noreferrer">
+    <a href="https://fr.linkedin.com/company/lutin-vert" target="_blank" rel="noopener noreferrer" aria-label="linkedin">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
       </svg>
@@ -364,7 +368,7 @@ document.querySelector('body').onscroll = () => {
 .banner {
   width: 100%;
   height: calc(var(--vh, 100vh) - var(--header-height));
-  background: linear-gradient(0deg, rgba(30, 24, 17, 0.7), rgba(30, 24, 17, 0.7)), url('/assets/banner-phone.jpg');
+  background: linear-gradient(0deg, rgba(30, 24, 17, 0.7), rgba(30, 24, 17, 0.7)), url('/assets/banner-phone.webp');
   background-size: cover;
   background-position-x: center;
   background-position-y: 20%;
@@ -412,7 +416,7 @@ document.querySelector('body').onscroll = () => {
   }
 
   @media (min-width: 700px) {
-    background: linear-gradient(0deg, rgba(30, 24, 17, 0.7), rgba(30, 24, 17, 0.7)), url('/assets/banner-pc.jpg');
+    background: linear-gradient(0deg, rgba(30, 24, 17, 0.7), rgba(30, 24, 17, 0.7)), url('/assets/banner-pc.webp');
     background-size: cover;
     background-position-x: center;
     background-position-y: 20%;

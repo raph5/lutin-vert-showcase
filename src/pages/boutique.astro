@@ -3,7 +3,11 @@ import FundingRequest from '../components/FundingRequest.astro';
 import Layout from '../layouts/MainLayout.astro'
 ---
 
-<Layout title="Boutique" id={2}>
+<Layout
+  title="Boutique"
+  description=""
+  id={2}>
+  <!-- TODO: refaire la description -->
 
 <FundingRequest color="secondary-yellow" />
 
@@ -16,8 +20,8 @@ import Layout from '../layouts/MainLayout.astro'
     </svg>
   </h2>
   <div class="site__mockup">
-    <img class="media-phone" src="/assets/lutinvert-mockup.png" alt="lutinvert.org mockup">
-    <img class="media-pc" src="/assets/desktop-mockup.png" alt="lutinvert.org mockup">
+    <img class="media-phone" src="/assets/lutinvert-mockup.webp" alt="lutinvert.org mockup">
+    <img class="media-pc" src="/assets/desktop-mockup.webp" alt="lutinvert.org mockup">
   </div>
   <div class="site__info">
     <p>
