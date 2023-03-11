@@ -11,6 +11,15 @@ import Layout from '../layouts/MainLayout.astro'
 
 <FundingRequest color="secondary-yellow" />
 
+<section class="section pourquoi">
+  <p>
+    <!-- TODO: refaire ce paragraphe et son css -->
+    Acheter un jouet Lutin Vert c'est contribuer au développement personnel et professionnel de nos employés en insertion, soutenir l'association et faire un geste éco-responsable, tout en faisant plaisir à un enfant, petit ou grand !<br>
+    L'argent de la vente des jouets sert directement à faire fonctionner l'association, en finançant notamment les salaires, le loyer et les autres charges.<br>
+    <b>Merci pour votre soutien !</b>
+  </p>
+</section>
+
 <section class="section site">
   <h2>
     Où acheter les jouets Lutin Vert
@@ -43,10 +52,7 @@ import Layout from '../layouts/MainLayout.astro'
     </svg>
   </h2>
   <p>
-    Lutin Vert est une association loi 1901 à but non lucratif née en 2021 dans le but de créer une <b>recyclerie de jouets</b> sur le nord toulousain. La mission de l'association est de permettre <b>l'inclusion de personnes éloignées de l'emploi</b> en leur proposant de reprendre pied dans le monde du travail au sein d'un atelier de réemploi des jouets.
-  </p>
-  <p>
-    Depuis fin 2021, l'association <b>collecte des jouets</b> qui lui sont donnés par les habitants de son territoire afin de leur donner une seconde vie. Ces jouets sont <b>rénovés par des salariés</b> en transition professionnelle à l'atelier de l'association. Chaque salarié est accompagné en parallèle du travail sur les jouets dans la construction de son projet de <b>retour à l'emploi</b>.
+    Nous sommes présents sur le <b>marché de l’Isle-Jourdain le samedi matin</b> (presque tous les samedis). Notre stand est la plupart du temps situé sur la place de la mairie de L’Isle-Jourdain
   </p>
 </section>
 
@@ -57,6 +63,11 @@ import Layout from '../layouts/MainLayout.astro'
 
 h2 {
   color: $color-secondary-yellow;
+}
+
+.pourquoi {
+  padding-top: 50px;
+  padding-bottom: 0;
 }
 
 .site {
