@@ -1,0 +1,1 @@
+const e=document.querySelector(".funding__label-box__label");setTimeout(()=>{e.style.transform="translateX(0)",setTimeout(()=>{e.style.transform="translateX(150%)"},5e3)},5e3);const t=document.querySelector(":root");t.style.setProperty("--vh",`${window.innerHeight.toString()}px`);
