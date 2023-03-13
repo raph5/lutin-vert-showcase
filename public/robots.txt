@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /politiques/
+
+Sitemap: https://asso.lutinvert.org/sitemap-index.xml
