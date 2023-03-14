@@ -1,11 +1,16 @@
 ---
 import FundingRequest from '../components/FundingRequest.astro';
-import Layout from '../layouts/MainLayout.astro'
+import Layout from '../layouts/MainLayout.astro';
+
+import { frontmatter as global } from '../../content/global.md'
+import { frontmatter as banner } from '../../content/donner/banner.md'
+import { Content as QuelsJouets, frontmatter as quelsJouets } from '../../content/donner/quels-jouets-donner.md'
+import { Content as OuDonner, frontmatter as ouDonner } from '../../content/donner/ou-donner.md'
 ---
 
 <Layout
-  title="Donner"
-  description=""
+  title={global.donner.title}
+  description={global.donner.description}
   id={1}>
   <!-- TODO: refaire la description -->
 
@@ -13,7 +18,7 @@ import Layout from '../layouts/MainLayout.astro'
 
 <section class="section head">
   <h2>
-    Donnez une nouvelle vie à vos jouets
+    {banner.title}
     <svg class="title-flower" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M28.542 11.7801C27.7384 13.7318 27.7384 15.9132 28.5421 17.8649C31.24 24.5811 24.5812 31.2399 17.865 28.5419C15.9133 27.7383 13.7319 27.7383 11.7802 28.5419C5.06398 31.2399 -1.59482 24.5811 1.10315 17.8649C1.9068 15.9131 1.90677 13.7318 1.10312 11.7801C-1.59485 5.06384 5.06396 -1.59497 11.7802 1.10299C13.7319 1.90664 15.9133 1.90667 17.865 1.10302C24.5812 -1.59494 31.24 5.06385 28.542 11.7801Z" fill="#678ddd"/>
       <path d="M12.3601 7.8H17.0401L15.5001 15.44H13.9001L12.3601 7.8ZM14.7401 21.16C13.9934 21.16 13.4068 21 12.9801 20.68C12.5668 20.3467 12.3601 19.8733 12.3601 19.26C12.3601 18.6467 12.5668 18.18 12.9801 17.86C13.4068 17.54 13.9934 17.38 14.7401 17.38C15.4734 17.38 16.0534 17.5467 16.4801 17.88C16.9068 18.2 17.1201 18.66 17.1201 19.26C17.1201 19.8733 16.9068 20.3467 16.4801 20.68C16.0534 21 15.4734 21.16 14.7401 21.16Z" fill="#F4F3F4"/>
@@ -90,60 +95,23 @@ import Layout from '../layouts/MainLayout.astro'
 <section class="section donner">
   <div class="donner__paragraph-1">
     <h2>
-      Quels jouets donner
+      {quelsJouets.title}
       <svg class="title-flower" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M28.542 11.7801C27.7384 13.7318 27.7384 15.9132 28.5421 17.8649C31.24 24.5811 24.5812 31.2399 17.865 28.5419C15.9133 27.7383 13.7319 27.7383 11.7802 28.5419C5.06398 31.2399 -1.59482 24.5811 1.10315 17.8649C1.9068 15.9131 1.90677 13.7318 1.10312 11.7801C-1.59485 5.06384 5.06396 -1.59497 11.7802 1.10299C13.7319 1.90664 15.9133 1.90667 17.865 1.10302C24.5812 -1.59494 31.24 5.06385 28.542 11.7801Z" fill="#F4F3F4"/>
         <path d="M10.1451 8.34248C11.4384 8.08915 12.8117 7.96248 14.2651 7.96248C15.5584 7.96248 16.6717 8.12248 17.6051 8.44248C18.5517 8.76248 19.2717 9.20915 19.7651 9.78248C20.2584 10.3425 20.5051 10.9892 20.5051 11.7225C20.5051 12.7892 20.1184 13.6225 19.3451 14.2225C18.5717 14.8092 17.4851 15.1025 16.0851 15.1025C15.5117 15.1025 14.9717 15.0691 14.4651 15.0025V16.3625H11.9651V13.0825H13.8051C15.0184 13.0825 15.9451 13.0025 16.5851 12.8425C17.2251 12.6825 17.5451 12.3492 17.5451 11.8425C17.5451 10.8825 16.3851 10.4025 14.0651 10.4025C12.9317 10.4025 11.6251 10.5358 10.1451 10.8025V8.34248ZM13.2651 21.4825C12.5184 21.4825 11.9317 21.3225 11.5051 21.0025C11.0917 20.6692 10.8851 20.1958 10.8851 19.5825C10.8851 18.9692 11.0917 18.5025 11.5051 18.1825C11.9317 17.8625 12.5184 17.7025 13.2651 17.7025C13.9984 17.7025 14.5784 17.8692 15.0051 18.2025C15.4317 18.5225 15.6451 18.9825 15.6451 19.5825C15.6451 20.1958 15.4317 20.6692 15.0051 21.0025C14.5784 21.3225 13.9984 21.4825 13.2651 21.4825Z" fill="#678ddd"/>
       </svg>
     </h2>
-    <p>
-      Nous collectons <b>tout type de jouet</b> s'il n'est <b>pas trop abîmé ou cassé</b> : jouets en bois, jeux d'éveil, jeux de construction, jeux de société, puzzles, figurines, véhicules, poupées, peluches…<br>
-      Nous collectons également les livres jeunesse en très bon état.
-    </p>
-    <p><b>Nous ne prenons pas :</b></p>
-    <ul>
-      <li>le matériel de puériculture</li>
-      <li>les objets de décoration et mobilier</li>
-      <li>les jouets ou livres promotionnels</li>
-      <li>les consoles de jeux</li>
-      <li>les DVD</li>
-    </ul>
+    <QuelsJouets />
   </div>
   <div class="donner__paragraph-2">
     <h2>
-      Où donner
+      {ouDonner.title}
       <svg class="title-flower" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M28.542 11.7801C27.7384 13.7318 27.7384 15.9132 28.5421 17.8649C31.24 24.5811 24.5812 31.2399 17.865 28.5419C15.9133 27.7383 13.7319 27.7383 11.7802 28.5419C5.06398 31.2399 -1.59482 24.5811 1.10315 17.8649C1.9068 15.9131 1.90677 13.7318 1.10312 11.7801C-1.59485 5.06384 5.06396 -1.59497 11.7802 1.10299C13.7319 1.90664 15.9133 1.90667 17.865 1.10302C24.5812 -1.59494 31.24 5.06385 28.542 11.7801Z" fill="#F4F3F4"/>
         <path d="M10.1451 8.34248C11.4384 8.08915 12.8117 7.96248 14.2651 7.96248C15.5584 7.96248 16.6717 8.12248 17.6051 8.44248C18.5517 8.76248 19.2717 9.20915 19.7651 9.78248C20.2584 10.3425 20.5051 10.9892 20.5051 11.7225C20.5051 12.7892 20.1184 13.6225 19.3451 14.2225C18.5717 14.8092 17.4851 15.1025 16.0851 15.1025C15.5117 15.1025 14.9717 15.0691 14.4651 15.0025V16.3625H11.9651V13.0825H13.8051C15.0184 13.0825 15.9451 13.0025 16.5851 12.8425C17.2251 12.6825 17.5451 12.3492 17.5451 11.8425C17.5451 10.8825 16.3851 10.4025 14.0651 10.4025C12.9317 10.4025 11.6251 10.5358 10.1451 10.8025V8.34248ZM13.2651 21.4825C12.5184 21.4825 11.9317 21.3225 11.5051 21.0025C11.0917 20.6692 10.8851 20.1958 10.8851 19.5825C10.8851 18.9692 11.0917 18.5025 11.5051 18.1825C11.9317 17.8625 12.5184 17.7025 13.2651 17.7025C13.9984 17.7025 14.5784 17.8692 15.0051 18.2025C15.4317 18.5225 15.6451 18.9825 15.6451 19.5825C15.6451 20.1958 15.4317 20.6692 15.0051 21.0025C14.5784 21.3225 13.9984 21.4825 13.2651 21.4825Z" fill="#678ddd"/>
       </svg>
     </h2>
-    <ul>
-      <li>
-        <b>À l’atelier du Lutin Vert</b> :<br>
-        Abbaye Sainte Marie du Désert 31 530 Bellegarde-Sainte-Marie<br>
-        Horaires d’accueil : Lundi, Mardi, Jeudi et Vendredi de 9h à 17h
-      </li>
-      <li>
-        <b>À la déchetterie de Grenade-sur-Garonne</b> dans le local réemploi<br>
-        Brouzac<br>
-        RD 30<br>
-        31330 Grenade<br>
-        Horaires : Lundi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 9h30 à 12h et 13h30 à 18h<br>
-        <b>Jours de Fermeture</b> : Mardi
-      </li>
-      <li>
-        <b>À la déchetterie de Cadours</b> dans le local réemploi<br>
-        Route de puyssegur<br>
-        31480 Cadours<br>
-        Horaires : Vendredi et Samedi de 9h30 à 12h00 et 13h30 à 16h30<br>
-        Dimanche de 14h00 à 16h30<br>
-        <b>Jours de Fermeture</b> : lundi, mardi, mercredi, jeudi
-      </li>
-      <li>
-        <b>Sur le marché de l’Isle-Jourdain</b> le samedi matin<br>
-        Appeler dans la semaine au 06 25 07 19 11 afin d’avoir confirmation de notre présence sur le marché
-      </li>
-    </ul>
+    <OuDonner />
   </div>
 </section>
 

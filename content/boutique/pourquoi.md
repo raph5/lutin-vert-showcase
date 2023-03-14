@@ -1,0 +1,3 @@
+Acheter un jouet Lutin Vert c'est contribuer au développement personnel et professionnel de nos employés en insertion, soutenir l'association et faire un geste éco-responsable, tout en faisant plaisir à un enfant, petit ou grand !  
+L'argent de la vente des jouets sert directement à faire fonctionner l'association, en finançant notamment les salaires, le loyer et les autres charges.  
+**Merci pour votre soutien !**

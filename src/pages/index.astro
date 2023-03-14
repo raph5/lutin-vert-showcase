@@ -1,13 +1,21 @@
 ---
 import FundingRequest from '../components/FundingRequest.astro';
 import SubscribeMailingList from '../components/SubscribeMailingList.astro';
-import Layout from '../layouts/MainLayout.astro'
+import Layout from '../layouts/MainLayout.astro';
+
+import { frontmatter as global } from '../../content/global.md'
+import { Content as Presentation, frontmatter as presentation } from '../../content/association/presentation.md'
+import { Content as Atelier, frontmatter as atelier } from '../../content/association/atelier-du-réemploi.md'
+import { Content as Chantier, frontmatter as chantier } from '../../content/association/chantier-d-insertion.md'
+import { frontmatter as equipe } from '../../content/association/equipe.md'
+import { frontmatter as partenaires } from '../../content/association/partenaires.md'
+import { frontmatter as footer } from '../../content/association/footer.md'
 ---
 
 
 <Layout
-  title="Lutin Vert - jouets verts jouets solidaires"
-  description="Des jouets de seconde main de qualité à prix solidaires Association à but non lucratif - Recyclerie de jouets /Atelier d'Insertion Favoriser l'insertion et l'économie circulaire : un geste écoresponsable !"
+  title={global.association.title}
+  description={global.association.description}
   id={0}>
   <!-- TODO: refaire la description -->
 
@@ -25,14 +33,14 @@ import Layout from '../layouts/MainLayout.astro'
   </div>
   <div class="qui-sommes-nous__paragraph">
     <h2 class="media-phone">
-      Qui sommes nous
+      {presentation.title}
       <svg class="title-flower" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M28.542 11.7801C27.7384 13.7318 27.7384 15.9132 28.5421 17.8649C31.24 24.5811 24.5812 31.2399 17.865 28.5419C15.9133 27.7383 13.7319 27.7383 11.7802 28.5419C5.06398 31.2399 -1.59482 24.5811 1.10315 17.8649C1.9068 15.9131 1.90677 13.7318 1.10312 11.7801C-1.59485 5.06384 5.06396 -1.59497 11.7802 1.10299C13.7319 1.90664 15.9133 1.90667 17.865 1.10303C24.5812 -1.59494 31.24 5.06386 28.542 11.7801Z" fill="#40251D"/>
         <path d="M10.145 8.34252C11.4384 8.08919 12.8117 7.96252 14.265 7.96252C15.5584 7.96252 16.6717 8.12252 17.605 8.44252C18.5517 8.76252 19.2717 9.20919 19.765 9.78252C20.2584 10.3425 20.505 10.9892 20.505 11.7225C20.505 12.7892 20.1184 13.6225 19.345 14.2225C18.5717 14.8092 17.485 15.1025 16.085 15.1025C15.5117 15.1025 14.9717 15.0692 14.465 15.0025V16.3625H11.965V13.0825H13.805C15.0184 13.0825 15.945 13.0025 16.585 12.8425C17.225 12.6825 17.545 12.3492 17.545 11.8425C17.545 10.8825 16.385 10.4025 14.065 10.4025C12.9317 10.4025 11.625 10.5359 10.145 10.8025V8.34252ZM13.265 21.4825C12.5184 21.4825 11.9317 21.3225 11.505 21.0025C11.0917 20.6692 10.885 20.1959 10.885 19.5825C10.885 18.9692 11.0917 18.5025 11.505 18.1825C11.9317 17.8625 12.5184 17.7025 13.265 17.7025C13.9984 17.7025 14.5784 17.8692 15.005 18.2025C15.4317 18.5225 15.645 18.9825 15.645 19.5825C15.645 20.1959 15.4317 20.6692 15.005 21.0025C14.5784 21.3225 13.9984 21.4825 13.265 21.4825Z" fill="white"/>
       </svg>
     </h2>
     <h2 class="media-pc">
-      Nous rénovons les jouets que vous n'utilisez plus
+      {presentation.titlePc}
       <svg class="title-flower" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <path d="M39.7964 16.0184C38.6563 18.7871 38.6564 21.8815 39.7964 24.6502C43.6237 34.1777 34.1777 43.6237 24.6502 39.7964C21.8815 38.6564 18.7871 38.6563 16.0184 39.7964C6.49097 43.6236 -2.95504 34.1776 0.872233 24.6502C2.01227 21.8815 2.01223 18.7871 0.872191 16.0184C-2.95508 6.49096 6.49096 -2.95508 16.0184 0.872191C18.7871 2.01223 21.8815 2.01227 24.6502 0.872234C34.1776 -2.95504 43.6236 6.49097 39.7964 16.0184Z" fill="#40251D"/>
         <rect x="7" y="6" width="26" height="27" fill="url(#pattern13252)"/>
@@ -44,38 +52,25 @@ import Layout from '../layouts/MainLayout.astro'
         </defs>
       </svg>
     </h2>
-    <p>
-      L'association Lutin Vert est une <b>recyclerie de jouets</b> installée au nord-ouest de Toulouse. Sa mission est de <b>favoriser l'inclusion par l'emploi</b> de personnes en situation de précarité.
-    </p>
-    <p>
-      L'association <b>collecte</b> les jouets inutilisés afin de leur donner une seconde vie. Ces jouets sont <b>rénovés</b> avec soin par les femmes et hommes en transition professionnelle qui travaillent à l'atelier. Les jouets sont ensuite <b>vendus à prix solidaires</b>. Chaque jouet réemployé permet de <b>préserver la planète</b>.
-    </p>
+    <Presentation />
     <button>
-      <a href="/contact">Devenir Bénévole</a>
+      <a href="/contact">{presentation.button}</a>
     </button>
   </div>
 </section>
 
 <section class="section atelier">
   <div class="atelier__paragraph">
-    <h2>Atelier du réemploi</h2>
-    <p>
-      En France, chaque année, plus de <b>100 000 tonnes de jouets sont jetées</b> pour seulement 13 000 à 25 000 tonnes de jouets réemployés. C'est pour répondre à cette problématique que Lutin Vert donne une seconde vie aux jouets inutilisés.
-    </p>
-    <p>
-      Chaque jouet est <b>vérifié, complété, rénové et nettoyé</b> par les salarié.e.s de l'atelier. Des réparations sont effectuées sur certains jouets (électronique, peinture de jouets en bois par exemple).
-    </p>
-    <p>
-      Dans une exigence de <b>qualité</b>, chaque jouet est contrôlé en sortie d'atelier avant sa mise en vente à prix solidaire.
-    </p>
+    <h2>{atelier.title}</h2>
+    <Atelier />
   </div>
   <div class="atelier__chifres">
     <div class="flower-1">
-      <span class="flower-1__num">4,4</span>
-      <span class="flower-1__title">tonnes de jouets collectées</span>
+      <span class="flower-1__num">{atelier.roundData}</span>
+      <span class="flower-1__title">{atelier.roundLabel}</span>
       <svg width="207" height="204" viewBox="0 0 207 204" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M130.602 18.5161C133.904 32.0191 148.233 39.9636 161.826 34.9467C184.182 26.8597 202.901 53.0949 188.714 71.8778C180.03 83.1401 183.22 99.2242 194.984 106.627C215.157 119.133 206.481 150.222 182.736 150.491C168.486 150.739 158.023 163.217 159.583 177.076C162.458 200.474 132.988 213.426 117.812 195.101C108.781 184.368 92.414 183.662 82.4931 193.578C65.7963 210.529 37.5502 195.089 42.428 172.026C45.175 158.353 35.8245 145.02 21.6479 143.547C-1.96742 140.805 -7.52325 109.534 13.2212 98.7917C25.578 92.4285 30.1403 76.6786 22.4573 64.7108C9.93962 44.7767 30.8281 20.6799 52.4238 30.2306C65.1228 35.9499 80.064 29.6981 84.9461 16.548C92.8204 -5.95497 125.124 -4.56242 130.602 18.5161Z" fill="#55C15A"/>
-      </svg>  
+      </svg>
     </div>
     <div class="flower-2">
       <svg width="258" height="258" viewBox="0 0 258 258" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,8 +78,8 @@ import Layout from '../layouts/MainLayout.astro'
       </svg>
     </div>
     <div class="flower-3">
-      <span class="flower-1__num">3 000</span>
-      <span class="flower-1__title">jouets rénovés</span>
+      <span class="flower-1__num">{atelier.starData}</span>
+      <span class="flower-1__title">{atelier.starLabel}</span>
       <svg width="221" height="221" viewBox="0 0 221 221" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M141.401 21.2344L153.46 49.2955C157.033 57.3129 163.286 63.5487 171.325 67.1121L199.462 79.1382C227.153 90.719 227.153 129.915 199.462 141.496L171.325 153.522C163.286 157.086 157.033 163.321 153.46 171.339L141.401 199.4C129.789 227.016 90.4867 227.016 78.8745 199.4L66.8157 171.339C63.2427 163.321 56.99 157.086 48.9508 153.522L20.8138 141.496C-6.87673 129.915 -6.87673 90.719 20.8138 79.1382L48.9508 67.1121C56.99 63.5487 63.2427 57.3129 66.8157 49.2955L78.8745 21.2344C90.4867 -5.93588 129.789 -5.93588 141.401 21.2344Z" fill="#F4F3F4"/>
       </svg>
@@ -158,67 +153,35 @@ import Layout from '../layouts/MainLayout.astro'
     </svg>
   </div>
   <div class="chantier__content">
-    <h2>Chantier d'insertion</h2>
-    <p>
-      Les postes de <b>technicien.ne.s du réemploi des jouets</b> s'adressent à des personnes rencontrant des difficultés sociales et professionnelles d'accès à l'emploi.
-    </p>
-    <p>
-      L'activité de rénovation des jouets est un moyen de développer et retrouver des <b>savoirs-faire et savoir-être transférables</b> dans le monde du travail classique.
-    </p>
-    <p>
-      Chaque salarié.e est accompagné.e par Hortense, <b>encadrante technique et pédagogique</b>, et Yoan, <b>conseiller en insertion professionnelle</b>, pour construire de son projet de retour vers l'emploi.
-    </p>
+    <h2>{chantier.title}</h2>
+    <Chantier />
     <button>
-      <a href="/contact">Postuler</a>
+      <a href="/contact">{chantier.button}</a>
     </button>
   </div>
 </section>
 
 <section class="section ekip">
-  <h2>L'équipe Lutin Vert</h2>
+  <h2>{equipe.title}</h2>
 
   <div class="ekip__crew">
-    <div class="ekip__crew__pp">
-      <div class="ekip__crew__pp__img">
-        <img src="/assets/isabelle.webp" alt="Isabelle">  
+    {equipe.equipe.map(({ name, role, image }) => (
+      <div class="ekip__crew__pp">
+        <div class="ekip__crew__pp__img">
+          {image &&
+            <img src={image} alt={name} />
+          }
+        </div>
+        <span class="ekip__crew__pp__name">{name}</span>
+        <span class="ekip__crew__pp__role">{role}</span>
       </div>
-      <span class="ekip__crew__pp__name">Isabelle</span>
-      <span class="ekip__crew__pp__role">Présidente</span>
-    </div>
-    <div class="ekip__crew__pp">
-      <div class="ekip__crew__pp__img">
-        <img src="/assets/gwenn.webp" alt="gwenn guyader">  
-      </div>
-      <span class="ekip__crew__pp__name">Gwenn</span>
-      <span class="ekip__crew__pp__role">Trésorière</span>
-    </div>
-    <div class="ekip__crew__pp">
-      <div class="ekip__crew__pp__img">
-        <img src="/assets/julie.webp" alt="Julie">  
-      </div>
-      <span class="ekip__crew__pp__name">Julie</span>
-      <span class="ekip__crew__pp__role">Secrétaire</span>
-    </div>
-    <div class="ekip__crew__pp">
-      <div class="ekip__crew__pp__img">
-        <img src="/assets/hortense.webp" alt="Hortense">  
-      </div>
-      <span class="ekip__crew__pp__name">Hortense</span>
-      <span class="ekip__crew__pp__role">Encadrante technique</span>
-    </div>
-    <div class="ekip__crew__pp">
-      <div class="ekip__crew__pp__img">
-        <!-- <img src="/assets/hortense.webp" alt="Yoan">   -->
-      </div>
-      <span class="ekip__crew__pp__name">Yoan</span>
-      <span class="ekip__crew__pp__role">Conseiller en insertion pro</span>
-    </div>
+    ))}
   </div>
 </section>
 
 <section class="section partenaires">
   <h2>
-    Nos partenaires
+    {partenaires.title}
     <svg class="title-flower" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M28.5378 11.778C27.7343 13.7295 27.7343 15.9107 28.5379 17.8622C31.2356 24.5777 24.5774 31.2358 17.8619 28.5381C15.9104 27.7346 13.7293 27.7345 11.7778 28.5381C5.06228 31.2358 -1.59582 24.5777 1.10186 17.8622C1.90543 15.9107 1.9054 13.7295 1.10183 11.778C-1.59585 5.06251 5.06226 -1.59561 11.7778 1.10207C13.7293 1.90564 15.9104 1.90567 17.8619 1.10211C24.5774 -1.59558 31.2355 5.06252 28.5378 11.778Z" fill="#40251D"/>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99612 11.7265C11.2517 10.4709 13.2874 10.4709 14.543 11.7265L14.8613 12.0448L15.1796 11.7265C16.4352 10.4709 18.4709 10.4709 19.7265 11.7265C20.9821 12.9821 20.9821 15.0179 19.7265 16.2735L14.8613 21.1387L9.99612 16.2735C8.74052 15.0179 8.74052 12.9821 9.99612 11.7265Z" fill="white"/>
@@ -237,30 +200,31 @@ import Layout from '../layouts/MainLayout.astro'
 
 <footer class="footer section">
   <div class="footer__association">
-    <h3>L'association</h3>
-    <a href="/pdf/Charte_LutinVert.pdf" target="_blank" rel="noopener noreferrer">Charte du Lutin Vert</a>
-    <a href="/pdf/Statuts_LutinVert.pdf" target="_blank" rel="noopener noreferrer">Statuts</a>
+    <h3>{footer.asso.title}</h3>
+    {footer.asso.links.map(({ name, href }) => (
+      <a href={href} target="_blank" rel="noopener noreferrer">{name}</a>
+    ))}
   </div>
   
   <div class="footer__infos">
-    <h3>Informations</h3>
-    <a href="/politiques/conditions_d_utilisation" target="_blank" rel="noopener noreferrer">Conditions d'utilisation</a>
-    <a href="/politiques/politique_de_confidentialité" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>
-    <a href="/politiques/mentions_legales" target="_blank" rel="noopener noreferrer">Mentions légales</a>
+    <h3>{footer.info.title}</h3>
+    {footer.info.links.map(({ name, href }) => (
+      <a href={href} target="_blank" rel="noopener noreferrer">{name}</a>
+    ))}
   </div>
   
   <div class="footer__newsletter">
-    <h3>Inscrivez-vous à la Newsletter</h3>
+    <h3>{footer.newsletter.title}</h3>
     <SubscribeMailingList />
   </div>
   
   <div class="footer__social-media">
-    <a href="https://www.facebook.com/lutinvertgg/" target="_blank" rel="noopener noreferrer" aria-label="facebook">
+    <a href={global.facebook} target="_blank" rel="noopener noreferrer" aria-label="facebook">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
       </svg>
     </a>
-    <a href="https://www.instagram.com/lutinvertgg/" target="_blank" rel="noopener noreferrer">
+    <a href={global.instagram} target="_blank" rel="noopener noreferrer">
       <svg version="1.1" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="instagram">
         <g>
           <path d="m12 2.3203c3.1523 0 3.5273 0.011719 4.7734 0.066407 1.1484 0.054687 1.7734 0.24609 2.1914 0.40625 0.51172 0.19141 0.97656 0.49219 1.3594 0.88672 0.39062 0.37891 0.69141 0.84375 0.88281 1.3555 0.16016 0.41797 0.35156 1.043 0.40625 2.1914 0.054688 1.2461 0.066407 1.6211 0.066407 4.7734s-0.011719 3.5273-0.066407 4.7734c-0.054687 1.1484-0.24609 1.7734-0.40625 2.1914-0.39844 1.0312-1.2109 1.8438-2.2422 2.2422-0.41797 0.16016-1.043 0.35156-2.1914 0.40625-1.2461 0.054688-1.6211 0.066407-4.7734 0.066407s-3.5273-0.011719-4.7734-0.066407c-1.1484-0.054687-1.7734-0.24609-2.1914-0.40625-0.51172-0.19141-0.97656-0.49219-1.3594-0.88281-0.39062-0.38281-0.69141-0.84766-0.88281-1.3594-0.16016-0.41797-0.35156-1.043-0.40625-2.1914-0.054688-1.2461-0.066407-1.6211-0.066407-4.7734s0.011719-3.5273 0.066407-4.7734c0.054687-1.1484 0.24609-1.7734 0.40625-2.1914 0.19141-0.51172 0.49219-0.97656 0.88281-1.3594 0.38281-0.39062 0.84766-0.69141 1.3594-0.88281 0.41797-0.16016 1.043-0.35156 2.1914-0.40625 1.2461-0.054688 1.6211-0.066407 4.7734-0.066407m0-2.1289c-3.207 0-3.6094 0.011719-4.8672 0.070313-1.2578 0.058593-2.1172 0.25781-2.8672 0.55078-0.78906 0.29688-1.5039 0.76172-2.0938 1.3594-0.59766 0.58984-1.0625 1.3047-1.3594 2.0938-0.29297 0.75-0.49219 1.6094-0.55078 2.8672-0.058594 1.2578-0.070313 1.6602-0.070313 4.8672s0.011719 3.6094 0.070313 4.8672c0.058593 1.2578 0.25781 2.1172 0.55078 2.8672 0.29688 0.78906 0.76172 1.5039 1.3594 2.0938 0.58984 0.59766 1.3047 1.0625 2.0938 1.3594 0.75 0.29297 1.6094 0.49219 2.8672 0.55078 1.2578 0.058594 1.6602 0.070313 4.8672 0.070313s3.6094-0.011719 4.8672-0.070313c1.2578-0.058593 2.1172-0.25781 2.8672-0.55078 1.5859-0.61328 2.8398-1.8672 3.4531-3.4531 0.29297-0.75 0.49219-1.6094 0.55078-2.8672 0.058594-1.2578 0.070313-1.6602 0.070313-4.8672s-0.011719-3.6094-0.070313-4.8672c-0.058593-1.2578-0.25781-2.1172-0.55078-2.8672-0.29688-0.78906-0.76172-1.5039-1.3594-2.0938-0.58984-0.59766-1.3047-1.0625-2.0938-1.3594-0.75-0.29297-1.6094-0.49219-2.8672-0.55078-1.2578-0.058594-1.6602-0.070313-4.8672-0.070313z"/>
@@ -269,7 +233,7 @@ import Layout from '../layouts/MainLayout.astro'
         </g>
       </svg>
     </a>
-    <a href="https://fr.linkedin.com/company/lutin-vert" target="_blank" rel="noopener noreferrer" aria-label="linkedin">
+    <a href={global.linkedin} target="_blank" rel="noopener noreferrer" aria-label="linkedin">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
       </svg>
@@ -729,7 +693,9 @@ document.querySelector('body').onscroll = () => {
                          "a c b"
                          "d c e"
                          "d f e"
-                         ". f .";
+                         "g f h"
+                         "g i h"
+                         ". i .";
 
     &__pp {
       padding-bottom: 30px;
@@ -781,6 +747,9 @@ document.querySelector('body').onscroll = () => {
       &:nth-child(4) { grid-area: d; }
       &:nth-child(5) { grid-area: e; }
       &:nth-child(6) { grid-area: f; }
+      &:nth-child(6) { grid-area: g; }
+      &:nth-child(6) { grid-area: h; }
+      &:nth-child(6) { grid-area: i; }
     }
   }
   @media (min-width: 1000px) {

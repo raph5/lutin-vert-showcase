@@ -1,11 +1,14 @@
 ---
 import FundingRequest from '../components/FundingRequest.astro';
 import Layout from '../layouts/MainLayout.astro'
+
+import { frontmatter as global } from '../../content/global.md'
+import { Content as Contact, frontmatter as contact } from '../../content/contact/contact.md'
 ---
 
 <Layout
-  title="Contact"
-  description=""
+  title={global.contact.title}
+  description={global.contact.description}
   id={3}>
   <!-- TODO: refaire la description -->
 
@@ -18,32 +21,22 @@ import Layout from '../layouts/MainLayout.astro'
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="#4f8f85" d="M8.99981 9.03781C9.42461 9.03781 9.78701 8.8878 10.087 8.5878C10.387 8.28781 10.537 7.92511 10.537 7.49971C10.537 7.07491 10.387 6.71251 10.087 6.41251C9.78701 6.11251 9.42461 5.96251 8.99981 5.96251C8.57501 5.96251 8.21261 6.11251 7.91261 6.41251C7.61261 6.71251 7.46261 7.07491 7.46261 7.49971C7.46261 7.92511 7.61261 8.28781 7.91261 8.5878C8.21261 8.8878 8.57501 9.03781 8.99981 9.03781ZM8.99981 16.4997C6.98741 14.7627 5.48441 13.1691 4.49081 11.7189C3.49661 10.2687 2.99951 8.91241 2.99951 7.65001C2.99951 5.7624 3.59951 4.2654 4.79951 3.15901C5.99951 2.05321 7.39961 1.50031 8.99981 1.50031C10.6 1.50031 12.0001 2.05321 13.2001 3.15901C14.4001 4.2654 15.0001 5.7624 15.0001 7.65001C15.0001 8.91241 14.503 10.2687 13.5088 11.7189C12.5152 13.1691 11.0122 14.7627 8.99981 16.4997Z"/>
       </svg>
-      <span>
-        Abbaye Sainte Marie du Désert<br>
-        35 Chemin de Saint Bernard<br>
-        31530 Bellegarde-Sainte-Marie
-      </span>
+      <span>{contact.address}</span>
     </div>
     <div class="contact__infos__chip">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="#4f8f85" d="M14.3063 15.2811C12.7685 15.1563 11.3183 14.772 9.95573 14.1282C8.59373 13.4844 7.39703 12.6438 6.36563 11.6064C5.33423 10.569 4.49363 9.36899 3.84383 8.00639C3.19403 6.64379 2.81273 5.19359 2.69993 3.65579C2.67473 3.39359 2.75273 3.16559 2.93393 2.97179C3.11513 2.77799 3.33713 2.68109 3.59993 2.68109H6.14963C6.36263 2.68109 6.54713 2.74379 6.70313 2.86919C6.85913 2.99399 6.96233 3.16259 7.01273 3.37499L7.46273 5.38109C7.48733 5.53109 7.48103 5.68109 7.44383 5.83109C7.40603 5.98109 7.33103 6.11249 7.21883 6.22529L5.39993 8.06219C5.92493 9.01259 6.56873 9.86879 7.33133 10.6308C8.09393 11.3934 8.95013 12.0372 9.89993 12.5622L11.7557 10.7622C11.8811 10.6374 12.0188 10.5594 12.1688 10.5282C12.3188 10.497 12.4625 10.494 12.5999 10.5192L14.606 10.9503C14.8184 11.0001 14.9873 11.1063 15.1127 11.2689C15.2375 11.4315 15.2999 11.619 15.2999 11.8314V14.3811C15.2999 14.7189 15.1811 14.9565 14.9435 15.0939C14.7059 15.2313 14.4935 15.2937 14.3063 15.2811Z"/>
       </svg>
-      <span>06 25 07 19 11</span>
+      <span>{contact.phone}</span>
     </div>
     <div class="contact__infos__chip">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="#4f8f85" d="M3.1498 14.4C2.7874 14.4 2.4718 14.2656 2.203 13.9968C1.9342 13.728 1.7998 13.4124 1.7998 13.05V4.94998C1.7998 4.58758 1.9342 4.27198 2.203 4.00318C2.4718 3.73438 2.7874 3.59998 3.1498 3.59998H14.8498C15.2248 3.59998 15.5434 3.73438 15.8056 4.00318C16.0684 4.27198 16.1998 4.58758 16.1998 4.94998V13.05C16.1998 13.4124 16.0684 13.728 15.8056 13.9968C15.5434 14.2656 15.2248 14.4 14.8498 14.4H3.1498ZM8.9998 9.89998L14.8498 6.54388V4.94998L8.9998 8.30608L3.1498 4.94998V6.54388L8.9998 9.89998Z"/>
       </svg>
-      <span>contact@lutinvert.org</span>
+      <span>{contact.mail}</span>
     </div>
     <div class="contact__infos__text">
-      <p>
-        <b>Horaires d'ouverture de l'atelier :</b>
-      </p>
-      <ul>
-        <li>Lundi, Mardi, Jeudi et Vendredi de 9h à 17h</li>
-        <li>Mercredi de 9h à 12h</li>
-      </ul>
+      <Contact />
     </div>
     <div class="contact__infos__social-media">
       <a href="https://www.facebook.com/lutinvertgg/" target="_blank" rel="noopener noreferrer" aria-label="facebook">
