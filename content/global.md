@@ -1,6 +1,6 @@
 ---
 association:
-  title: Lutin Vert - jouets verts jouets solidaires
+  title: Lutin Vert - Jouets verts Jouets solidaires
   description: "Des jouets de seconde main de qualité à prix solidaires Association à but non lucratif - Recyclerie de jouets /Atelier d'Insertion Favoriser l'insertion et l'économie circulaire : un geste écoresponsable !"
 donner:
   title: Donner
