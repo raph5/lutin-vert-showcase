@@ -15,5 +15,5 @@ equipe:
     image: /assets/hortense.webp
   - name: Yoan
     role: Conseiller en insertion pro
-    image:
+    image: /assets/yoan.webp
 ---
