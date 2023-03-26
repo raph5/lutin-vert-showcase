@@ -1,0 +1,132 @@
+
+<div class="popup">
+  <div class="popup__box">
+    <button class="popup__box__close">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+        <path d="M249 862.566 193.434 807l231-231-231-231L249 289.434l231 231 231-231L766.566 345l-231 231 231 231L711 862.566l-231-231-231 231Z"/>
+      </svg>
+    </button>
+    <iframe
+      id="haWidget"
+      allowtransparency="true"
+      src="https://www.helloasso.com/associations/lutin-vert/collectes/lutin-vert-une-recyclerie-de-jouets-un-atelier-chantier-d-insertion/widget-vignette"
+      style="width: 300px; height: 500px; border: none;">
+    </iframe>
+  </div>
+</div>
+
+<script>
+
+// Get the 'lastPopup' value from the localStorage
+const lastPopup = localStorage.getItem('lastPopup');
+
+// Check if the 'lastPopup' value does not exist or if it is more than 24 hours old
+if (!lastPopup || Date.now() - parseInt(lastPopup) > 1000*60*60*24) {
+  // If the popup should be shown, get the <body> element and the popup element
+  const body = document.querySelector('body');
+  const popup = document.querySelector('.popup');
+
+  // Define a function that toggles the visibility of the popup and updates the body overflow
+  function togglePopup() {
+    if (popup.classList.contains('popup--visible')) { 
+      popup.classList.remove('popup--visible');
+      body.style.overflowY = '';
+    } else {
+      popup.classList.add('popup--visible');
+      body.style.overflowY = 'hidden';
+    }
+  }
+
+  // Add a click event listener to the popup that triggers the togglePopup function
+  popup.addEventListener('click', togglePopup);
+
+  // Set a timeout of 1 second that triggers the togglePopup function
+  setTimeout(togglePopup, 1000);
+
+  // Set the current timestamp in the localStorage as the 'lastPopup' value
+  localStorage.setItem('lastPopup', Date.now().toString());
+}
+
+</script>
+
+<style lang="scss">
+@import '../scss/var';
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #0003;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 300ms;
+  transition-delay: 100ms;
+  visibility: hidden;
+  
+  iframe {
+    box-shadow: 0 0 10px #0004;
+  }
+  &__box {
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 300ms;
+    transition-delay: 100ms;
+
+    &__close {
+      cursor: pointer;
+      border: none;
+      border-radius: 50%;
+      padding: 5px;
+      background: #fff;
+      width: max-content;
+      height: max-content;
+      
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+      box-shadow: 0 0 10px #0004;
+
+      svg {
+        display: block;
+
+        path {
+          fill: $color-primary-regular;
+        }
+      }
+      
+      @media (min-width: 900px) {
+        &:hover {
+          background: $color-primary-regular;
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &--visible {
+    :global(body) {
+      overflow-y: hidden;
+    }
+    opacity: 1;
+    visibility: visible;
+    
+    .popup__box {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+</style>

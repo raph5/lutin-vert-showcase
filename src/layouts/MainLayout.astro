@@ -1,4 +1,5 @@
 ---
+import FundingPopup from '../components/FundingPopup.astro';
 import Header from '../components/Header.astro'
 
 const { title, description, id } = Astro.props;
@@ -25,7 +26,7 @@ const { title, description, id } = Astro.props;
   <main>
     <slot />
   </main>
-  <!-- icon pour soutien de l'association -->
+  <FundingPopup />
 </body>
 
 </html>
