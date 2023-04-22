@@ -20,8 +20,8 @@
 // Get the 'lastPopup' value from the localStorage
 const lastPopup = localStorage.getItem('lastPopup');
 
-// Check if the 'lastPopup' value does not exist or if it is more than 24 hours old
-if (!lastPopup || Date.now() - parseInt(lastPopup) > 1000*60*60*24) {
+// Check if the 'lastPopup' value does not exist or if it is more than 1 hours old
+if (!lastPopup || Date.now() - parseInt(lastPopup) > 1000*60*60) {
   // If the popup should be shown, get the <body> element and the popup element
   const body = document.querySelector('body');
   const popup = document.querySelector('.popup');
