@@ -17,7 +17,6 @@ import { frontmatter as footer } from '../../content/association/footer.md'
   title={global.association.title}
   description={global.association.description}
   id={0}>
-  <!-- TODO: refaire la description -->
 
 <FundingRequest color="primary-regular" />
 
@@ -195,6 +194,7 @@ import { frontmatter as footer } from '../../content/association/footer.md'
     <img class="occitanie" src="/assets/occitanie.webp" alt="logo la région occitanie">
     <img class="prefet-la-region" src="/assets/prefet_la_region.webp" alt="logo préfet la région occitanie">
     <img class="ag2r" src="/assets/ag2r.webp" alt="logo ag2r">
+    <!-- <img class="credit-cooperatif" src="/assets/credit-cooperatif.webp" alt="logo fondation credit cooperatif"> -->
   </div>
 </section>
 
@@ -246,6 +246,73 @@ import { frontmatter as footer } from '../../content/association/footer.md'
 
 
 <script>
+
+
+// partners graying animation
+const DELAY = 2000
+const GRAYING_EFFECT = 'grayscale(100%) contrast(70%)'
+
+// get partners images
+const partners = document.querySelectorAll('.partenaires__logos img')
+
+// focus and unfocus functions
+function focusPartner(partner) {
+  partner.style.filter = ''
+}
+function unfocusPartner(partner) {
+  partner.style.filter = GRAYING_EFFECT
+}
+
+// graying all the partners
+for(const p of partners) {
+  unfocusPartner(p)
+}
+
+// create function to change focus
+let partnerInedx = 0
+let nextTimeout
+function setFocus(pIx) {
+  if(partnerInedx !== pIx) {
+    // drop focus on last partner
+    unfocusPartner( partners[partnerInedx] )
+
+    // focus new partner
+    focusPartner( partners[pIx] )
+
+    // update partnerInedx
+    partnerInedx = pIx
+  }
+
+  // remove old timeout
+  if(nextTimeout) {
+    clearTimeout(nextTimeout)
+  }
+  
+  // create the new timeout
+  nextTimeout = setTimeout(() => {
+    setFocus( (partnerInedx+1) % partners.length )
+  }, DELAY)
+}
+
+// focus partner when overed
+for(let pIx=0; pIx<partners.length; pIx++) {
+  // store partner index in element dataset
+  partners[pIx].dataset.index = pIx
+
+  // setup event listener
+  partners[pIx].addEventListener('over', e => {
+    console.log(e.target.dataset.index )
+    setFocus( e.target.dataset.index )
+  })
+}
+
+// init animation
+setFocus(0)
+
+
+
+
+// floating toys animation
 
 let idle = window.innerWidth > 900
 
