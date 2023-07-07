@@ -187,14 +187,9 @@ import { frontmatter as footer } from '../../content/association/footer.md'
     </svg>
   </h2>
   <div class="partenaires__logos">
-    <img class="edf" src="/assets/edf.webp" alt="logo edf">
-    <img class="pole-emploi" src="/assets/pole_emploi.webp" alt="logo pôle emploi">
-    <img class="decoset" src="/assets/decoset.webp" alt="logo decoset">
-    <img class="ademe" src="/assets/ademe.webp" alt="logo ademe">
-    <img class="occitanie" src="/assets/occitanie.webp" alt="logo la région occitanie">
-    <img class="prefet-la-region" src="/assets/prefet_la_region.webp" alt="logo préfet la région occitanie">
-    <img class="ag2r" src="/assets/ag2r.webp" alt="logo ag2r">
-    <!-- <img class="credit-cooperatif" src="/assets/credit-cooperatif.webp" alt="logo fondation credit cooperatif"> -->
+    {partenaires.partenaires.map(p => (
+      <img src={p.image} alt={p.alt}>
+    ))}
   </div>
 </section>
 
@@ -246,70 +241,6 @@ import { frontmatter as footer } from '../../content/association/footer.md'
 
 
 <script>
-
-
-// partners graying animation
-const DELAY = 2000
-const GRAYING_EFFECT = 'grayscale(100%) contrast(70%)'
-
-// get partners images
-const partners = document.querySelectorAll('.partenaires__logos img')
-
-// focus and unfocus functions
-function focusPartner(partner) {
-  partner.style.filter = ''
-}
-function unfocusPartner(partner) {
-  partner.style.filter = GRAYING_EFFECT
-}
-
-// graying all the partners
-for(const p of partners) {
-  unfocusPartner(p)
-}
-
-// create function to change focus
-let partnerInedx = 0
-let nextTimeout
-function setFocus(pIx) {
-  if(partnerInedx !== pIx) {
-    // drop focus on last partner
-    unfocusPartner( partners[partnerInedx] )
-
-    // focus new partner
-    focusPartner( partners[pIx] )
-
-    // update partnerInedx
-    partnerInedx = pIx
-  }
-
-  // remove old timeout
-  if(nextTimeout) {
-    clearTimeout(nextTimeout)
-  }
-  
-  // create the new timeout
-  nextTimeout = setTimeout(() => {
-    setFocus( (partnerInedx+1) % partners.length )
-  }, DELAY)
-}
-
-// focus partner when overed
-for(let pIx=0; pIx<partners.length; pIx++) {
-  // store partner index in element dataset
-  partners[pIx].dataset.index = pIx
-
-  // setup event listener
-  partners[pIx].addEventListener('over', e => {
-    console.log(e.target.dataset.index )
-    setFocus( e.target.dataset.index )
-  })
-}
-
-// init animation
-setFocus(0)
-
-
 
 
 // floating toys animation
@@ -842,127 +773,68 @@ document.querySelector('body').onscroll = () => {
   }
   &__logos {
     width: 100%;
-    aspect-ratio: 10/8;
-    position: relative;
-
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 50px;
+    
     img {
-      position: absolute;
+      height: 80px;
     }
-    .ag2r {
-      top: 22%;
-      left: 13%;
-      width: 60%;
+    
+    @media (min-width: 850px) {
+      img {
+        height: 95px;
+      }
     }
-    .prefet-la-region {
-      top: 0;
-      left: 0;
-      width: 70%;
-    }
-    .occitanie {
-      right: 0;
-      top: 5%;
-      width: 20%;
-    }
-    .ademe {
-      left: 0;
-      top: 50%;
-      width: 25%;
-    }
-    .decoset {
-      left: 42%;
-      top: 45%;
-      width: 20%;
-    }
-    .edf {
-      left: 30%;
-      bottom: 0;
-      width: 50%;
-    }
-    .pole-emploi {
-      right: 0;
-      bottom: 23%;
-      width: 30%;
+    @media (min-width: 1100px) {
+      img {
+        height: 115px;
+        filter: grayscale(100%);
+        transition: filter 100ms;
+        
+        &:hover {
+          filter: grayscale(0%);
+        }
+      }
     }
 
-    @media (min-width: 600px) {
-      aspect-ratio: 10/3.5;
-
-      .ag2r {
-        top: 30%;
-        width: 40%;
-      }
-      .prefet-la-region {
-        width: 50%;
-      }
-      .occitanie {
-        right: 3%;
-        top: 0;
-        width: 14%;
-      }
-      .ademe {
-        top: unset;
-        left: 8%;
-        bottom: 0;
-        width: 11%;
-      }
-      .decoset {
-        top: unset;
-        left: 30%;
-        bottom: 0;
-        width: 12%;
-      }
-      .edf {
-        left: unset;
-        right: 0;
-        bottom: -8%;
-        width: 45%;
-      }
-      .pole-emploi {
-        right: 25%;
-        bottom: unset;
-        top: 0;
-        width: 17%;
-      }
-    }
-    @media (min-width: 1000px) {
-      aspect-ratio: 10/2;
-
-      .ag2r {
-        top: unset;
-        left: unset;
-        bottom: -10%;
-        right: 0;
-        width: 30%;
-      }
-      .prefet-la-region {
-        width: 40%;
-      }
-      .edf {
-        right: unset;
-        left: 10%;
-        width: 30%;
-      }
-      .ademe {
-        width: 10%;
-        left: 55%;
-        bottom: 1%;
-      }
-      .decoset {
-        top: 5%;
-        left: 43%;
-        bottom: unset;
-        width: 10%;
-      }
-      .pole-emploi {
-        top: unset;
-        bottom: 48%;
-        width: 11%;
-        right: 20%;
-      }
-      .occitanie {
-        width: 10%;
-      }
-    }
+    // .ag2r {
+    //   top: 22%;
+    //   left: 13%;
+    //   width: 60%;
+    // }
+    // .prefet-la-region {
+    //   top: 0;
+    //   left: 0;
+    //   width: 70%;
+    // }
+    // .occitanie {
+    //   right: 0;
+    //   top: 5%;
+    //   width: 20%;
+    // }
+    // .ademe {
+    //   left: 0;
+    //   top: 50%;
+    //   width: 25%;
+    // }
+    // .decoset {
+    //   left: 42%;
+    //   top: 45%;
+    //   width: 20%;
+    // }
+    // .edf {
+    //   left: 30%;
+    //   bottom: 0;
+    //   width: 50%;
+    // }
+    // .pole-emploi {
+    //   right: 0;
+    //   bottom: 23%;
+    //   width: 30%;
+    // }
   }
 }
 
