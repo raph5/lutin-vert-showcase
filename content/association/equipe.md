@@ -5,7 +5,7 @@ equipe:
     role: Présidente
     image: /assets/isabelle.webp
   - name: Gwenn
-    role: Trésorière
+    role: Coordinatrice
     image: /assets/gwenn.webp
   - name: Julie
     role: Secrétaire

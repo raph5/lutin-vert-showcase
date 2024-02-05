@@ -1,6 +1,6 @@
 ---
 title: Où acheter les jouets Lutin Vert
-button: Voir le Boutique
+button: Voir la Boutique
 boutique: https://www.lutinvert.org/ 
 ---
 

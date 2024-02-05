@@ -1,9 +1,9 @@
 ---
 title: Atelier du réemploi
 roundLabel: tonnes de jouets collectées
-roundData: 4,4
+roundData: 10,1
 starLabel: jouets rénovés
-starData: 3 000
+starData: 6 000
 ---
 
 En France, chaque année, plus de **100 000 tonnes de jouets sont jetées** pour seulement 13 000 à 25 000 tonnes de jouets réemployés. C'est pour répondre à cette problématique que Lutin Vert donne une seconde vie aux jouets inutilisés.

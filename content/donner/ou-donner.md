@@ -19,6 +19,3 @@ title: Où donner
   Horaires : Vendredi et Samedi de 9h30 à 12h00 et 13h30 à 16h30  
   Dimanche de 14h00 à 16h30  
   **Jours de Fermeture** : lundi, mardi, mercredi, jeudi
-  
-- **Sur le marché de l'Isle-Jourdain** le samedi matin  
-  Appeler dans la semaine au 06 25 07 19 11 afin d'avoir confirmation de notre présence sur le marché

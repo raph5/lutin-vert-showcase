@@ -7,5 +7,4 @@ mail: contact@lutinvert.org
 
 **Horaires d'ouverture de l'atelier :**
 
-- Lundi, Mardi, Jeudi et Vendredi de 9h à 17h
-- Mercredi de 9h à 12h
+Lundi, Mardi, Jeudi et Vendredi de 9h à 17h

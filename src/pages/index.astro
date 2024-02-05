@@ -208,10 +208,12 @@ import { frontmatter as footer } from '../../content/association/footer.md'
     ))}
   </div>
   
-  <div class="footer__newsletter">
-    <h3>{footer.newsletter.title}</h3>
-    <SubscribeMailingList />
-  </div>
+  {/* -- Newsletter --
+    <div class="footer__newsletter">
+      <h3>{footer.newsletter.title}</h3>
+      <SubscribeMailingList />
+    </div>
+  */}
   
   <div class="footer__social-media">
     <a href={global.facebook} target="_blank" rel="noopener noreferrer" aria-label="facebook">
@@ -791,12 +793,6 @@ document.querySelector('body').onscroll = () => {
     @media (min-width: 1100px) {
       img {
         height: 115px;
-        filter: grayscale(100%);
-        transition: filter 100ms;
-        
-        &:hover {
-          filter: grayscale(0%);
-        }
       }
     }
 
@@ -893,9 +889,12 @@ document.querySelector('body').onscroll = () => {
   @media (min-width: 1000px) {
     display: grid;
     gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "asso info newsletter"
-                         "socials socials socials";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "asso info"
+                         "socials socials";
+    //  -- newsletter --
+    // grid-template-areas: "asso info newsletter"
+    //                      "socials socials socials";
 
     &__association  {
       grid-area: asso;
